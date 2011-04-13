@@ -97,11 +97,10 @@ EOF
     def description_from_url(url)
       doc = Nokogiri::HTML(open(url))
 
-      fields = doc.search(".Fieldlabel").map &:text
-      values = doc.search(".TEXT").map &:text
+      parser = JobDetailParser.new
+      details = parser.parse(doc)
 
-      position = fields.index("Job Description")
-      values[position]
+      details['Job Description']
     end
 
     def extract_date(node, name)
