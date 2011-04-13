@@ -1,6 +1,6 @@
 module Kenexa
 
-  class Job < Struct.new(:title, :url, :city)
+  class Job < Struct.new(:title, :url, :city, :state)
 
   end
 

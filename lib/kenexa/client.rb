@@ -73,14 +73,16 @@ EOF
         title = extract_question(node, :title)
         url   = extract_text(node, "//JobDetailLink")
         city  = extract_question(node, :city)
+        state = extract_question(node, :state)
 
-        Job.new(title, url, city)
+        Job.new(title, url, city, state)
       }
     end
 
     QUESTION_MAP = {
       :title => 7996,
       :city  => 15615,
+      :state => 15616,
     }.freeze
 
     private
