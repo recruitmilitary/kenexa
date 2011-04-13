@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://integrationuri.org/">
+  <Envelope version="01.00">
+    <Sender>
+      <Id>12345</Id>
+      <Credential>25152</Credential>
+    </Sender>
+    <TransactInfo transactType="response" transactId="6b2044ed-8925-4d31-bf95-8930e3288c1c">
+      <TransactId>01/27/2010</TransactId>
+      <TimeStamp>12:00:00 AM</TimeStamp>
+    </TransactInfo>
+    <Unit UnitProcessor="SearchAPI">
+      <Packet>
+        <PacketInfo packetType="data" encrypted="no">
+          <packetId>1</packetId>
+        </PacketInfo>
+        <Payload>
+          <InputString>
+            <ClientId>25152</ClientId>
+            <SiteId>5244</SiteId>
+            <PageNumber>1</PageNumber>
+            <OutputXMLFormat>0</OutputXMLFormat>
+            <AuthenticationToken/>
+            <HotJobs/>
+            <ProximitySearch>
+              <Distance/>
+              <Measurement/>
+              <Country/>
+              <State/>
+              <City/>
+              <zipCode/>
+            </ProximitySearch>
+            <JobMatchCriteriaText/>
+            <SelectedSearchLocaleId/>
+            <Questions>
+              <Question Sortorder="ASC" Sort="No">
+                <Id>7982</Id>
+                <Value>TG_SEARCH_ALL</Value>
+              </Question>
+            </Questions>
+            <Questions>
+              <Question Sortorder="ASC" Sort="No">
+                <Id>15616</Id>
+                <Value>TG_SEARCH_ALL</Value>
+              </Question>
+            </Questions>
+          </InputString>
+          <ResultSet>
+            <Jobs>
+              <Job>
+                <Question Id="7996">Door Attendant</Question>
+                <Question Id="15859">Archstone Midtown West </Question>
+                <Question Id="15601">Archstone Midtown West </Question>
+                <Question Id="15615">New York </Question>
+                <Question Id="15616">New York </Question>
+                <Question Id="7972">14879BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>12-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217790</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Customer Service Associate</Question>
+                <Question Id="15859">Crystal House I </Question>
+                <Question Id="15601">Crystal House I </Question>
+                <Question Id="15615">Arlington</Question>
+                <Question Id="15616">Virginia </Question>
+                <Question Id="7972">14882BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>12-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=218011</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Operations Administrative Assistant</Question>
+                <Question Id="15859">San Francisco </Question>
+                <Question Id="15601">San Francisco </Question>
+                <Question Id="15615">San Francisco </Question>
+                <Question Id="15616">California </Question>
+                <Question Id="7972">14849BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>11-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=216836</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Leasing Consultant</Question>
+                <Question Id="15859">Archstone Simi Valley </Question>
+                <Question Id="15601">Archstone Simi Valley </Question>
+                <Question Id="15615">Simi Valley </Question>
+                <Question Id="15616">California </Question>
+                <Question Id="7972">14881BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>11-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217940</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Resident Services Director</Question>
+                <Question Id="15859">Arlington</Question>
+                <Question Id="15601">Arlington</Question>
+                <Question Id="15615">Arlington</Question>
+                <Question Id="15616">Virginia </Question>
+                <Question Id="7972">14718BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>11-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=210180</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Regional Marketing Manager</Question>
+                <Question Id="15859">New York </Question>
+                <Question Id="15601">New York </Question>
+                <Question Id="15615">New York </Question>
+                <Question Id="15616">New York </Question>
+                <Question Id="7972">14864BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>11-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217349</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Leasing Consultant</Question>
+                <Question Id="15859">The Statesman </Question>
+                <Question Id="15601">The Statesman </Question>
+                <Question Id="15615">Washington</Question>
+                <Question Id="15616">District of Columbia </Question>
+                <Question Id="7972">14880BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>11-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217871</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Groundskeeper / Porter-Overnight</Question>
+                <Question Id="15859">Archstone Midtown West </Question>
+                <Question Id="15601">Archstone Midtown West </Question>
+                <Question Id="15615">New York </Question>
+                <Question Id="15616">New York </Question>
+                <Question Id="7972">14878BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>08-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217763</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Groundskeeper / Porter</Question>
+                <Question Id="15859">Archstone Thousand Oaks Plaza </Question>
+                <Question Id="15601">Archstone Thousand Oaks Plaza </Question>
+                <Question Id="15615">Thousand Oaks </Question>
+                <Question Id="15616">California </Question>
+                <Question Id="7972">14874BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>07-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217646</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Maintenance Technician</Question>
+                <Question Id="15859">Archstone Emerald Park </Question>
+                <Question Id="15601">Archstone Emerald Park </Question>
+                <Question Id="15615">Dublin</Question>
+                <Question Id="15616">California </Question>
+                <Question Id="7972">14873BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>07-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217637</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Community Manager</Question>
+                <Question Id="15859">The Flats at Dupont Circle </Question>
+                <Question Id="15601">The Flats at Dupont Circle </Question>
+                <Question Id="15615">Washington</Question>
+                <Question Id="15616">District of Columbia </Question>
+                <Question Id="7972">14872BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>07-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217614</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Assistant Community Manager</Question>
+                <Question Id="15859">Archstone Woodland Park </Question>
+                <Question Id="15601">Archstone Woodland Park </Question>
+                <Question Id="15615">Herndon</Question>
+                <Question Id="15616">Virginia </Question>
+                <Question Id="7972">14871BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>07-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217595</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Assistant Community Manager</Question>
+                <Question Id="15859">Crystal House I </Question>
+                <Question Id="15601">Crystal House I </Question>
+                <Question Id="15615">Arlington</Question>
+                <Question Id="15616">Virginia </Question>
+                <Question Id="7972">14810BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>07-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=215253</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Community Manager</Question>
+                <Question Id="15859">Archstone Cheshire Bridge </Question>
+                <Question Id="15601">Archstone Cheshire Bridge </Question>
+                <Question Id="15615">Atlanta</Question>
+                <Question Id="15616">Georgia </Question>
+                <Question Id="7972">14870BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>07-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217585</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Assistant Community Manager</Question>
+                <Question Id="15859">Cleveland House </Question>
+                <Question Id="15601">Cleveland House </Question>
+                <Question Id="15615">Washington</Question>
+                <Question Id="15616">District of Columbia </Question>
+                <Question Id="7972">14695BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>07-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=209064</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Community Manager</Question>
+                <Question Id="15859">Cronins Landing </Question>
+                <Question Id="15601">Cronins Landing </Question>
+                <Question Id="15615">Waltham</Question>
+                <Question Id="15616">Massachusetts </Question>
+                <Question Id="7972">14869BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>06-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217473</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Administrative Assistant</Question>
+                <Question Id="15859">East Operations </Question>
+                <Question Id="15601">Atlanta Office </Question>
+                <Question Id="15615">Atlanta</Question>
+                <Question Id="15616">Georgia </Question>
+                <Question Id="7972">14866BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>06-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217409</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Community Manager</Question>
+                <Question Id="15859">Archstone Russett </Question>
+                <Question Id="15601">Archstone Russett </Question>
+                <Question Id="15615">Laurel</Question>
+                <Question Id="15616">Maryland </Question>
+                <Question Id="7972">14792BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>06-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=214518</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Community Manager</Question>
+                <Question Id="15859">Archstone Crystal Plaza </Question>
+                <Question Id="15601">Archstone Crystal Plaza </Question>
+                <Question Id="15615">Arlington</Question>
+                <Question Id="15616">Virginia </Question>
+                <Question Id="7972">14853BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>06-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217023</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Groundskeeper / Porter</Question>
+                <Question Id="15859">Archstone Lexington </Question>
+                <Question Id="15601">Archstone Lexington </Question>
+                <Question Id="15615">Flower Mound</Question>
+                <Question Id="15616">Texas </Question>
+                <Question Id="7972">14867BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>06-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217442</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Leasing Consultant</Question>
+                <Question Id="15859">Archstone Oak Creek </Question>
+                <Question Id="15601">Archstone Oak Creek </Question>
+                <Question Id="15615">Agoura Hills </Question>
+                <Question Id="15616">California </Question>
+                <Question Id="7972">14764BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>05-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=213162</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Accountant I</Question>
+                <Question Id="15859">Property Accounting </Question>
+                <Question Id="15601">Englewood Headquarters </Question>
+                <Question Id="15615">Englewood</Question>
+                <Question Id="15616">Colorado </Question>
+                <Question Id="7972">14865BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>05-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217356</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Accountant II</Question>
+                <Question Id="15859">Property Accounting </Question>
+                <Question Id="15601">Englewood Headquarters </Question>
+                <Question Id="15615">Englewood</Question>
+                <Question Id="15616">Colorado </Question>
+                <Question Id="7972">14808BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>05-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=215195</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Maintenance Technician</Question>
+                <Question Id="15859">Archstone Walnut Creek </Question>
+                <Question Id="15601">Archstone Walnut Creek </Question>
+                <Question Id="15615">Walnut Creek </Question>
+                <Question Id="15616">California </Question>
+                <Question Id="7972">14863BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>05-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217304</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Leasing Consultant</Question>
+                <Question Id="15859">Archstone Westchase </Question>
+                <Question Id="15601">Archstone Westchase </Question>
+                <Question Id="15615">Houston</Question>
+                <Question Id="15616">Texas </Question>
+                <Question Id="7972">14862BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>05-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217298</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Groundskeeper / Porter - Overnight</Question>
+                <Question Id="15859">Archstone Chelsea </Question>
+                <Question Id="15601">Archstone Chelsea </Question>
+                <Question Id="15615">New York </Question>
+                <Question Id="15616">New York </Question>
+                <Question Id="7972">14777BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>05-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=213959</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Leasing Consultant</Question>
+                <Question Id="15859">Archstone Preston Park </Question>
+                <Question Id="15601">Archstone Preston Park </Question>
+                <Question Id="15615">Plano</Question>
+                <Question Id="15616">Texas </Question>
+                <Question Id="7972">14755BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>05-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=211897</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Maintenance Manager</Question>
+                <Question Id="15859">Archstone 2501 Porter </Question>
+                <Question Id="15601">Archstone 2501 Porter </Question>
+                <Question Id="15615">Washington</Question>
+                <Question Id="15616">District of Columbia </Question>
+                <Question Id="7972">14861BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>04-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217222</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Part-time Leasing Consultant</Question>
+                <Question Id="15859">Crystal House I </Question>
+                <Question Id="15601">Crystal House I </Question>
+                <Question Id="15615">Arlington</Question>
+                <Question Id="15616">Virginia </Question>
+                <Question Id="7972">14839BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>04-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=216510</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Customer Service Associate</Question>
+                <Question Id="15859">Archstone Waterford Place </Question>
+                <Question Id="15601">Archstone Waterford Place </Question>
+                <Question Id="15615">Woodinville</Question>
+                <Question Id="15616">Washington </Question>
+                <Question Id="7972">14860BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>04-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217204</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Groundskeeper / Porter</Question>
+                <Question Id="15859">Archstone Ventura Colony </Question>
+                <Question Id="15601">Archstone Ventura Colony </Question>
+                <Question Id="15615">Ventura</Question>
+                <Question Id="15616">California </Question>
+                <Question Id="7972">14859BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>04-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217177</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Leasing Consultant</Question>
+                <Question Id="15859">Redmond Hill </Question>
+                <Question Id="15601">Redmond Hill </Question>
+                <Question Id="15615">Redmond</Question>
+                <Question Id="15616">Washington </Question>
+                <Question Id="7972">14744BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>04-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=211300</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Financial Analyst - Ops</Question>
+                <Question Id="15859">East Operations </Question>
+                <Question Id="15601">Arlington Office </Question>
+                <Question Id="15615">Arlington</Question>
+                <Question Id="15616">Virginia </Question>
+                <Question Id="7972">14819BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>04-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=215713</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Part-time Maintenance Technician</Question>
+                <Question Id="15859">Archstone Delray Beach </Question>
+                <Question Id="15601">Archstone Delray Beach </Question>
+                <Question Id="15615">Delray Beach </Question>
+                <Question Id="15616">Florida </Question>
+                <Question Id="7972">14858BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>01-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217061</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Part-time Maintenance Technician</Question>
+                <Question Id="15859">Archstone Hidden Harbor </Question>
+                <Question Id="15601">Archstone Hidden Harbor </Question>
+                <Question Id="15615">Royal Palm Beach </Question>
+                <Question Id="15616">Florida </Question>
+                <Question Id="7972">14857BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>01-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217060</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Resident Concierge</Question>
+                <Question Id="15859">Archstone Avenir </Question>
+                <Question Id="15601">Archstone Avenir </Question>
+                <Question Id="15615">Boston</Question>
+                <Question Id="15616">Massachusetts </Question>
+                <Question Id="7972">14694BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>01-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=209053</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Maintenance Technician</Question>
+                <Question Id="15859">Archstone 101 West End </Question>
+                <Question Id="15601">Archstone 101 West End </Question>
+                <Question Id="15615">New York </Question>
+                <Question Id="15616">New York </Question>
+                <Question Id="7972">14856BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>01-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217053</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Customer Service Associate</Question>
+                <Question Id="15859">Archstone Santa Monica </Question>
+                <Question Id="15601">Archstone Santa Monica </Question>
+                <Question Id="15615">Santa Monica </Question>
+                <Question Id="15616">California </Question>
+                <Question Id="7972">14855BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>01-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217051</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Maintenance Technician</Question>
+                <Question Id="15859">Archstone Westside </Question>
+                <Question Id="15601">Archstone Westside </Question>
+                <Question Id="15615">Los Angeles </Question>
+                <Question Id="15616">California </Question>
+                <Question Id="7972">14854BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>01-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217049</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Leasing Consultant</Question>
+                <Question Id="15859">Westchester at Contee Crossing </Question>
+                <Question Id="15601">Westchester at Contee Crossing </Question>
+                <Question Id="15615">Laurel</Question>
+                <Question Id="15616">Maryland </Question>
+                <Question Id="7972">14852BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>01-Apr-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=217016</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Assistant Community Manager</Question>
+                <Question Id="15859">Archstone Avenir </Question>
+                <Question Id="15601">Archstone Avenir </Question>
+                <Question Id="15615">Boston</Question>
+                <Question Id="15616">Massachusetts </Question>
+                <Question Id="7972">14841BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>31-Mar-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=216663</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Assistant Community Manager</Question>
+                <Question Id="15859">Archstone North Point </Question>
+                <Question Id="15601">Archstone North Point </Question>
+                <Question Id="15615">Cambridge</Question>
+                <Question Id="15616">Massachusetts </Question>
+                <Question Id="7972">14842BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>31-Mar-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=216665</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">IT Network Engineer</Question>
+                <Question Id="15859">IT Corporate </Question>
+                <Question Id="15601">Englewood Headquarters </Question>
+                <Question Id="15615">Englewood</Question>
+                <Question Id="15616">Colorado </Question>
+                <Question Id="7972">14595BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>31-Mar-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=205128</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Part-time Groundskeeper / Porter</Question>
+                <Question Id="15859">Archstone Cedar River </Question>
+                <Question Id="15601">Archstone Cedar River </Question>
+                <Question Id="15615">Renton</Question>
+                <Question Id="15616">Washington </Question>
+                <Question Id="7972">14848BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>31-Mar-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=216773</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Maintenance Manager</Question>
+                <Question Id="15859">Archstone Encinitas </Question>
+                <Question Id="15601">Archstone Encinitas </Question>
+                <Question Id="15615">Encinitas</Question>
+                <Question Id="15616">California </Question>
+                <Question Id="7972">14845BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>30-Mar-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=216706</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Groundskeeper / Porter</Question>
+                <Question Id="15859">Archstone Belltown </Question>
+                <Question Id="15601">Archstone Belltown </Question>
+                <Question Id="15615">Seattle</Question>
+                <Question Id="15616">Washington </Question>
+                <Question Id="7972">14844BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>30-Mar-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=216691</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Leasing Consultant</Question>
+                <Question Id="15859">Archstone North Point </Question>
+                <Question Id="15601">Archstone North Point </Question>
+                <Question Id="15615">Cambridge</Question>
+                <Question Id="15616">Massachusetts </Question>
+                <Question Id="7972">14843BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>30-Mar-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=216666</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Maintenance Technician</Question>
+                <Question Id="15859">Archstone Arrowhead </Question>
+                <Question Id="15601">Archstone Arrowhead </Question>
+                <Question Id="15615">Glendale</Question>
+                <Question Id="15616">Arizona </Question>
+                <Question Id="7972">14840BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>30-Mar-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=216646</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Operations Manager</Question>
+                <Question Id="15859">West Operations </Question>
+                <Question Id="15601">Santa Ana Office </Question>
+                <Question Id="15615">Santa Ana </Question>
+                <Question Id="15616">California </Question>
+                <Question Id="7972">14577BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>29-Mar-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=204434</JobDetailLink>
+              </Job>
+              <Job>
+                <Question Id="7996">Assistant General Manager</Question>
+                <Question Id="15859">Archstone Walnut Creek Station </Question>
+                <Question Id="15601">Archstone Walnut Creek Station </Question>
+                <Question Id="15615">Walnut Creek </Question>
+                <Question Id="15616">California </Question>
+                <Question Id="7972">14565BR</Question>
+                <HotJob>No</HotJob>
+                <LastUpdated>29-Mar-2011</LastUpdated>
+                <JobDetailLink>https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&amp;siteid=5244&amp;jobid=204132</JobDetailLink>
+              </Job>
+            </Jobs>
+            <OtherInformation>
+              <TotalRecordsFound>103</TotalRecordsFound>
+              <MaxPages>3</MaxPages>
+              <StartDoc>1</StartDoc>
+              <PageNumber>1</PageNumber>
+            </OtherInformation>
+          </ResultSet>
+        </Payload>
+        <Status>
+          <Code>200</Code>
+          <ShortDescription>Successful Search API Call</ShortDescription>
+          <LongDescription>The Search API call has been successfully completed and returned with results.</LongDescription>
+        </Status>
+      </Packet>
+      <Status>
+        <Code>200</Code>
+        <ShortDescription>Successful Search API Call</ShortDescription>
+        <LongDescription>The Search API call has been successfully completed and returned with results.</LongDescription>
+      </Status>
+    </Unit>
+    <Status>
+      <Code>200</Code>
+      <ShortDescription>Success</ShortDescription>
+      <LongDescription>All units are processed with success codes</LongDescription>
+    </Status>
+  </Envelope>
+</string>
