@@ -71,11 +71,12 @@ EOF
 
       envelope.search("//Job").map { |node|
         attributes = {
-          :title => extract_question(node, :title),
-          :url   => extract_text(node, "//JobDetailLink"),
-          :city  => extract_question(node, :city),
-          :state => extract_question(node, :state),
+          :url => extract_text(node, "//JobDetailLink"),
         }
+
+        QUESTION_MAP.keys.each do |attribute|
+          attributes[attribute] = extract_question(node, attribute)
+        end
 
         Job.new(attributes)
       }
