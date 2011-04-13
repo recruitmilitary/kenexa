@@ -3,3 +3,4 @@ module Kenexa
 end
 
 require 'kenexa/client'
+require 'kenexa/job'
