@@ -70,15 +70,25 @@ EOF
       envelope = Nokogiri::XML doc.children.first.text
 
       envelope.search("//Job").map { |node|
-        title = extract_text(node, "//Question[@Id='7996']")
+        title = extract_question(node, :title)
         url   = extract_text(node, "//JobDetailLink")
-        city  = extract_text(node, "//Question[@Id='15615']")
+        city  = extract_question(node, :city)
 
         Job.new(title, url, city)
       }
     end
 
+    QUESTION_MAP = {
+      :title => 7996,
+      :city  => 15615,
+    }.freeze
+
     private
+
+    def extract_question(node, name)
+      question_id = QUESTION_MAP[name]
+      extract_text(node, "//Question[@Id='#{question_id}']")
+    end
 
     def extract_text(node, xpath)
       node.at(xpath).text.strip
