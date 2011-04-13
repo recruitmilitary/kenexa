@@ -70,12 +70,18 @@ EOF
       envelope = Nokogiri::XML doc.children.first.text
 
       envelope.search("//Job").map { |node|
-        title = node.at("//Question[@Id='7996']").text
-        url   = node.at("//JobDetailLink").text
-        city  = node.at("//Question[@Id='15615']").text.strip
+        title = extract_text(node, "//Question[@Id='7996']")
+        url   = extract_text(node, "//JobDetailLink")
+        city  = extract_text(node, "//Question[@Id='15615']")
 
         Job.new(title, url, city)
       }
+    end
+
+    private
+
+    def extract_text(node, xpath)
+      node.at(xpath).text.strip
     end
 
   end
