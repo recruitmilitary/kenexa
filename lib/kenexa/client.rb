@@ -9,7 +9,15 @@ module Kenexa
   class Client
 
     DEFAULT_ENDPOINT = 'http://import.brassring.com/WebRouter/WebRouter.asmx/route'
+
     TEMPLATE_PATH = File.dirname(__FILE__) + "/templates"
+
+    QUESTION_MAP = {
+      :title        => 7996,
+      :city         => 15615,
+      :state        => 15616,
+      :internal_id  => 7972,
+    }.freeze
 
     def initialize(endpoint = DEFAULT_ENDPOINT)
       @uri = URI.parse(endpoint)
@@ -38,13 +46,6 @@ module Kenexa
         Job.new(attributes)
       }
     end
-
-    QUESTION_MAP = {
-      :title        => 7996,
-      :city         => 15615,
-      :state        => 15616,
-      :internal_id  => 7972,
-    }.freeze
 
     private
 
