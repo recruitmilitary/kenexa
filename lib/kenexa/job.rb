@@ -1,6 +1,6 @@
 module Kenexa
 
-  class Job < Struct.new(:title, :url, :city, :state, :internal_id, :last_updated)
+  class Job < Struct.new(:title, :url, :city, :state, :internal_id, :last_updated, :description)
 
     def initialize(attributes = {})
       attributes.each do |attribute, value|

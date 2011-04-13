@@ -1,5 +1,6 @@
-require "net/http"
-require "uri"
+require 'net/http'
+require 'uri'
+require 'open-uri'
 require 'nokogiri'
 
 module Kenexa
@@ -79,6 +80,7 @@ EOF
           attributes[attribute] = extract_question(node, attribute)
         end
 
+        attributes[:description] = description_from_url(attributes[:url])
         Job.new(attributes)
       }
     end
@@ -91,6 +93,16 @@ EOF
     }.freeze
 
     private
+
+    def description_from_url(url)
+      doc = Nokogiri::HTML(open(url))
+
+      fields = doc.search(".Fieldlabel").map &:text
+      values = doc.search(".TEXT").map &:text
+
+      position = fields.index("Job Description")
+      values[position]
+    end
 
     def extract_date(node, name)
       Date.parse extract_text(node, name)
