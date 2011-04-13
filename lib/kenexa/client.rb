@@ -86,8 +86,11 @@ EOF
     private
 
     def extract_question(node, name)
-      question_id = QUESTION_MAP[name]
-      extract_text(node, "//Question[@Id='#{question_id}']")
+      if question_id = QUESTION_MAP[name]
+        extract_text(node, "//Question[@Id='#{question_id}']")
+      else
+        raise ArgumentError, "missing question mapping for #{name}"
+      end
     end
 
     def extract_text(node, xpath)
