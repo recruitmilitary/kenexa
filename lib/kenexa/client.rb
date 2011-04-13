@@ -43,7 +43,6 @@ module Kenexa
           attributes[attribute] = extract_question(node, attribute)
         end
 
-        attributes[:description] = description_from_url(attributes[:url])
         Job.new(attributes)
       }
     end
@@ -63,15 +62,6 @@ module Kenexa
     end
 
     private
-
-    def description_from_url(url)
-      doc = Nokogiri::HTML(open(url))
-
-      parser = JobDetailParser.new
-      details = parser.parse(doc)
-
-      details['Job Description']
-    end
 
     def extract_date(node, name)
       Date.parse extract_text(node, name)
