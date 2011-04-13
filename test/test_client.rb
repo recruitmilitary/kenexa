@@ -25,6 +25,7 @@ class TestIntegration < MiniTest::Unit::TestCase
     assert_equal 50, jobs.size
     assert_equal 'Door Attendant', job.title
     assert_equal 'https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&siteid=5244&jobid=217790', job.url
+    assert_equal 'New York', job.city
   end
 
 end

@@ -72,8 +72,9 @@ EOF
       envelope.search("//Job").map { |node|
         title = node.at("//Question[@Id='7996']").text
         url   = node.at("//JobDetailLink").text
+        city  = node.at("//Question[@Id='15615']").text.strip
 
-        Job.new(title, url)
+        Job.new(title, url, city)
       }
     end
 
