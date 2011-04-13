@@ -9,11 +9,12 @@ class TestIntegration < MiniTest::Unit::TestCase
   FIXTURE_PATH = File.dirname(__FILE__) + '/fixtures'
 
   def fixture(name)
-    File.read(File.join(FIXTURE_PATH, name))
+    File.read(File.join(FIXTURE_PATH, name)).chomp
   end
 
   def setup
     stub_request(:post, "http://import.brassring.com/WebRouter/WebRouter.asmx/route").
+      with(:body => fixture('page_1_request.xml')).
       to_return(:status => 200, :body => fixture('search_results.xml'), :headers => {})
 
     stub_request(:get, "https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?jobid=217790&partnerid=25152&siteid=5244").
