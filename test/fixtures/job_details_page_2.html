@@ -1,0 +1,1900 @@
+
+
+<SCRIPT LANGUAGE="javascript">
+var MSG_DifferentLocaleSubmission= "You have selected jobs in different languages. Please limit your selection to one language at a time. \n\rAfter submitting, you can select jobs from a different language and submit."
+var MSG_SiteSwitch= "Recruitment for the selected job(s) will be in the language of the job posting(s).  To continue, the language of this site will change to match the language of the selected job(s).  You will need to provide your resume/CV in the language of the selected job(s) in order to maximize your visibility to the recruitment personnel."
+</SCRIPT>
+
+<META name="keywords" content="brassring, job search, job fairs, tech job, it, information technology, employment, resume, monster, headhunter, computer, listing, opening, description, bank, career, internship, opportunity, employment opportunities, classified ads, engineering, search engine, telecommunication, free agent, internet, dice.com, full time, freelance, executive, graphic design, vacancy, executive, part time, classified ads, technology, programmer, post resume, professional, computer work, technical recruiter, project management, research companies, web developer, board, database, Westech, networking, manager, computer, technical writing, engineer, professionals, application, posting, hightech, hiring, interview, expos, employer, qa, consulting, semiconductor, consultant,  computing, hardware, help wanted, technologies, analyst, administrative, administrator, industry">
+
+<META name="description" content="Search information technology and Internet job openings. Locate job fairs and career events. Post resumes to high tech employers.">
+
+
+
+<SCRIPT LANGUAGE="javascript">
+var MSG_cim_jobdetail_JobCart="The job cart contains a maximum of 50 jobs. Please delete jobs from your cart in order to add new ones.";</SCRIPT>
+<NOSCRIPT>In order to access this site, you need to enable Javascript. To change this setting, please refer to your browser's documentation.</NOSCRIPT>
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+var MSG_ConfirmMismatch= "Entry does not match for [QUESTION]";
+var MSG_GEN_EntValdEmlAddr="Please enter a valid e-mail address.\nDelete all the invalid characters, including spaces, from your e-mail address.";
+var MSG_GEN_PlsEntValdEmlAddr="Please enter a valid e-mail address.";
+var MSG_GEN_PlsDelPrdFrmEndOfYrEmlAddr="Please delete the period from the end of your e-mail address.";
+var MSG_GEN_PlsDelPrdFrmBgnOfYrEmlAddr="Please delete the period from the beginning of your e-mail address.";
+var MSG_GEN_PlsRmDblQut="Please remove the ' DOUBLE QUOTE (\") ' you have entered.";
+var MSG_GEN_PlsEntValdDate="Please enter a valid date.";
+var MSG_GEN_EnterVal= "Please enter a value for |QUESTION|";
+var MSG_GEN_PlsEntVldYear="Please enter a valid year. The start year should be less than the end year.";
+var MSG_GEN_PlsEntVldSSN="Please enter a valid SSN.";
+var MSG_GEN_SSNFormat="The SSN should be in xxx-xx-xxxx format.";
+var MSG_GEN_FromToDate="The From date should be less than the To date.";
+var MSG_GEN_EntValdPasswd="Spaces are not allowed in the e-mail or in the password field. Please remove the spaces and try again.";
+var MSG_GEN_PlsEntVldNumber="Please enter a valid number.";
+var MSG_GEN_PlsEntComDot="Comma and period values cannot be the last character in numeric value fields.";
+var MSG_GEN_PlsEntComma="Comma values cannot be the first character in numeric value fields";
+var MSG_GEN_EnterValRange= "Please enter a value for |QUESTION| between |MIN| and |MAX|.";
+var MSG_TSV_EnterValidInputText= "This entry should contain valid HTML characters.  Please reference the help file for a list of basic valid HTML tags.";
+var MSG_TSV_EnterValidInputTextArea= "This entry should contain valid HTML characters.  Please reference the help file for a list of basic valid HTML tags.";
+var MSG_TSV_EnterValidInputSearchFields= "This entry should contain valid HTML characters.  Please reference the help file for a list of basic valid HTML tags.";var MSG_GEN_UserNameLen="Please enter a valid username.";
+var MSG_GEN_UserNameInvalidChars="The username must not include the following characters: < >";var MSG_GEN_UserNameSpaces="The username must not include any spaces.";
+var MSG_GEN_EnterValidPassword="Please enter a valid password.\nDelete all the invalid characters, including spaces, from your password.";var MSG_GEN_UserNameLength="The username must be less than 100 characters.";
+var MSG_InputValidationFail= "[QUESTION] requires a valid entry.";</SCRIPT>
+
+<NOSCRIPT>In order to access this site, you need to enable Javascript. To change this setting, please refer to your browser's documentation.</NOSCRIPT>
+
+<script language="JavaScript1.2">
+// ---------------------------- //
+// General JavaScript Library:  //
+// Author : Beji Joseph         //
+// ---------------------------- //
+       var subwindow;
+       var lnk;
+	   	
+       function showHelp(lnk)
+       {
+       if (!subwindow || subwindow.closed)
+       {
+		subwindow =  window.open(lnk,"help","height=400,width=450,menubar=no,toolbar=no,resizable=no,scrollbars=yes,alwaysRaised");
+                        if (!subwindow.opener)
+                        {
+                        subwindow.opener = window;
+                        }
+                }
+        else
+                {
+                subwindow.focus();      
+                window.open(lnk,"help");                  
+                }
+        }
+
+function inValidChar(passedVal)
+{
+	if (passedVal == "\f") 
+		return true;
+	else 
+	{
+		if (passedVal == "\n") 
+			return true;
+		else 
+		{
+			if(passedVal == "\r") 
+				return true;
+			else 
+			{
+				if(passedVal == "\t")  
+					return true;
+			}
+		}
+	}
+	return false;
+}
+
+function hasValue(passedVal, bInValidCharCheck)
+{
+	var charHold;
+	
+	if (ReplaceInString(passedVal, " ", "") == '') return false;
+	if (ReplaceInString(ReplaceInString(ReplaceInString(ReplaceInString(passedVal, "\f", ""), "\r", ""), "\n", ""), "\t", "") == '') return false;
+	
+	if(bInValidCharCheck)
+		for (i=0; i<passedVal.length; i++) 
+		{
+			charHold = passedVal.charAt(i);
+			if (inValidChar(charHold)) return false;
+		}
+	return true;
+}
+
+// C:173 start Added these functions for controlling the Hover texts DIV tags
+function getLayer(SRC,displayLength,strHoverFieldlength)
+{
+    displayLength = displayLength * 1;
+	strHoverFieldlength = strHoverFieldlength * 1;
+	
+	// Make hidden all divs into the page first
+	var divs = document.getElementsByTagName('div'); // all divs
+	for (var i = 0; i < divs.length; i++) 
+	{
+		var el=  divs.item(i);
+		var str=el.id;
+		if (str.indexOf('TGHover') != -1)
+		{
+			var tDIV2 = document.getElementById(str);         
+			tDIV2.style.visibility = "hidden";
+		}
+		
+	} 
+	var tDIV = document.getElementById("TGHover" + SRC) ;
+	var displayValue = document.getElementById("TGHoverVal" + SRC).value ;
+	displayValue += document.getElementById("TGHoverClick" + SRC).value ;
+	
+	// Hide the div where string contains blank value or none
+	if ( displayLength < 1)	
+	{		          
+		tDIV.style.visibility = "hidden";	
+		return;
+	}
+	// Calculate the width to be displayed
+	var widthofDiv ;
+	if (displayLength > strHoverFieldlength )
+	{
+		widthofDiv = strHoverFieldlength * 6;
+	}
+	else
+	{
+		widthofDiv = displayLength * 6;
+	}
+	// Get the exact width of the main table.
+	var ExactDivWidth = ( document.getElementById("MainTable").clientWidth - 120 ) * 1;
+	
+	if (widthofDiv < 250 )	
+		widthofDiv = 250
+	else if ( displayLength > 65 && displayLength < 150 )	
+		widthofDiv = ( ExactDivWidth < 400 ) ? ExactDivWidth : 400		// This is the maximum width to be displayed.
+	else if ( displayLength > 150 && displayLength < 300)	
+		widthofDiv = ( ExactDivWidth < 500 ) ? ExactDivWidth : 500		// This is the maximum width to be displayed.
+	else if ( displayLength > 300)	
+		widthofDiv = ExactDivWidth;		// This is the maximum width to be displayed.
+		
+	// Make visible the selected one.
+	tDIV.style.width = widthofDiv;	
+	tDIV.style.cursor = "hand";
+	tDIV.style.visibility = "visible";		
+	tDIV.innerHTML = displayValue;	
+}
+
+function stringTrim (str) {
+	str = str.replace(/^\s+/, '');
+	for (var i = str.length - 1; i <= 0; i--) {
+		if (/\S/.test(str.charAt(i))) {
+			str = str.substring(0, i + 1);
+			break;
+		}
+	}
+	return str;
+}
+
+function floatLayer(SRC,e)
+{ 
+	
+	var tDIV = document.getElementById("TGHover" + SRC); 	
+	var TotaltableHeight; 
+	
+	var divHeight = ( document.getElementById("TGHover" + SRC).clientHeight ) * 1;
+	var tableHeight = ( document.getElementById("MainTable").clientHeight + document.body.scrollTop ) * 1;
+	TotaltableHeight = tableHeight ;
+	
+	//if (document.getElementById("MenuTable").clientHeight != null )
+	//    TotaltableHeight += ( document.getElementById("MenuTable").clientHeight ) * 1;
+	
+	if (document.getElementById("TitleCriteriaTable") != null )    
+	    TotaltableHeight += ( document.getElementById("TitleCriteriaTable").clientHeight ) * 1;
+	
+	if (document.getElementById("PagingTable") != null)    
+	    TotaltableHeight += ( document.getElementById("PagingTable").clientHeight ) * 1;
+	    
+    if (document.getElementById("ButtonTable")	!= null)    
+	    TotaltableHeight += ( document.getElementById("ButtonTable").clientHeight ) * 1;
+   
+
+	// Just set the left position. No need to set the top position. 
+	if(navigator.appName.indexOf("Microsoft") != -1)
+	{	   
+	    var leftStyle = ( e.x + document.body.scrollLeft + 25 ) * 1;
+	    var topStyle = ( e.y + document.body.scrollTop ) * 1;
+	    var correctPosition = ( topStyle + divHeight ) ;  	  
+	    e = (e) ? e : window.event;
+        var element1 = (e.target) ? e.target: e.srcElement;
+	    if (correctPosition >  TotaltableHeight )
+	    {   
+	        tDIV.style.marginTop =  ( (-1*divHeight + element1.parentNode.clientHeight)   + 'px'); 
+	        tDIV.style.left = leftStyle; 
+	    }
+	    else
+	    {   
+	        tDIV.style.left = leftStyle;
+	     }   	 
+	}
+	else // For all other browsers use this.
+	{   
+	    var leftStyle = ( e.layerX + 25 ) * 1;
+	    var topStyle = ( e.layerY + document.body.scrollTop ) * 1;
+	    var correctPosition = ( topStyle + divHeight );    	
+	    
+	    e = (e) ? e : window.event;    
+	    var element2 = (e.target) ? e.target: e.srcElement;	    
+
+	    if (correctPosition >  TotaltableHeight )
+	    {
+	        tDIV.style.marginTop =  ( (-1*divHeight + element2.parentNode.clientHeight)   + 'px'); 
+	        tDIV.style.left = leftStyle;	     
+	    }
+	    else
+	    {
+	        tDIV.style.left = leftStyle;
+	     }   
+    }
+}	
+function hideLayer(SRC)
+{
+	var tDIV = document.getElementById(SRC)
+	tDIV.style.visibility='hidden'
+}
+function hideAllLayer()
+{
+	// Make hidden all divs into the page first
+	var divs = document.getElementsByTagName('div'); // all divs
+	for (var i = 0; i < divs.length; i++) 
+	{
+		var el=  divs.item(i);
+		var str=el.id;
+		if (str.indexOf('TGHover') != -1)
+		{
+			var tDIV2 = document.getElementById(str)             
+			tDIV2.style.visibility = "hidden"
+		}
+	} 
+}				
+//C:173 end till here added these fucntions.
+
+function emailCheck(emailField)
+{
+	if(emailField.value.replace(/ /g, "").length != 0)
+	{
+		var RegExp1 = new RegExp('^[a-zA-Z0-9ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ!#$%&\'/*/+-///=/?/^_`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$', 'g'); // Regular Expression for Email
+		if (!emailField.value.match(RegExp1))
+		{
+			alert(MSG_GEN_EntValdEmlAddr);
+			emailField.focus();
+			return false;
+		}
+	}
+
+	if (!checkDBQuote(emailField))
+	{
+		return false;
+	}
+
+	return true;
+}
+
+function checkDBQuote(refControl){
+	if (refControl.value.indexOf('"') != -1) {
+		alert(MSG_GEN_PlsRmDblQut);
+		refControl.focus();
+		return false;
+	}
+	else
+		return true;
+
+}
+function isChecked(refCtrl)
+{
+	if(refCtrl.checked == true) 
+	{
+		return true;
+	}
+	else
+	{	
+		if (refCtrl.length >0)
+		{
+			for(var i=0;i<refCtrl.length;i++){
+				if(refCtrl[i].checked)
+					return true;	
+			}
+		}
+		else
+		{
+			return false;
+		}
+	}
+	return false;
+}
+function validUploadFile(refControl){
+var defFileTypes = new Array("doc","rtf","txt");
+var strCompare = new String(validUploadFile.arguments[1]);
+var arrExtn = new Array();
+strCompare = strCompare.toLowerCase();
+	if (!hasValue(refControl.value)){
+		return false;
+		}
+	if (!checkDBQuote(refControl)){
+		return false;
+		}
+	if (validUploadFile.arguments.length > 1){
+		if 	(strCompare.indexOf(",") != -1){
+			arrExtn = strCompare.split(",");
+		}
+		else
+		{
+			arrExtn[0] =  strCompare;
+		}
+//		return compareExtn(refControl,arrExtn);
+		}	
+	else	{
+		arrExtn = defFileTypes;
+//		return compareExtn(refControl,arrExtn);
+		}
+		return compareExtn(refControl,arrExtn);
+}
+function compareExtn(refControl,arrExtn){
+	var strFile = new String(refControl.value);
+	var intBegPos,intEndPos;
+	
+	strFile = strFile.toLowerCase();
+	for (var i=0;i < arrExtn.length ;i++ ){
+		intBegPos = strFile.length - arrExtn[i].length;
+		intEndPos =  strFile.length;
+		if ("." + strFile.substring(intBegPos ,intEndPos) == ("." + arrExtn[i] )){
+			return true;
+		}
+	}
+	return false;
+}
+
+function XmlEncode(sText) {
+    var intTextlength = 0;
+    var strOneChar = "";
+    var strNewText = "";
+    
+    intTextlength = sText.length;
+    
+    for (var i=0;i < intTextlength; i++)
+		 {strOneChar = sText.charAt(i);
+                   if (sText.charAt(i) == "&")
+		     strOneChar = "&amp;";
+		   if (sText.charAt(i) == "<")
+   			strOneChar = "&lt;";
+ 		   if (sText.charAt(i) == ">")
+  			strOneChar = "&gt;";
+		   if (sText.charAt(i) == '"')
+  			strOneChar = "&quot;";
+//		   if (sText.charAt(i) == "'")
+//			strOneChar = "&apos;";	
+
+		   strNewText = strNewText + strOneChar;
+		 }
+    
+    //sText = sText.replace("&", "&amp;")
+    //sText = sText.replace("<", "&lt;")
+    //sText = sText.replace(">", "&gt;")
+    //sText = sText.replace("'", "&apos;")
+    
+    return strNewText;
+}
+
+// Function to determine if value is in acceptable range for this application.
+function inRange(inputStr, min, max){
+   var num = parseInt(inputStr, 10);
+   if (num < min || num > max){
+      return false;
+   }
+   return true;
+}
+
+// Added by RamS for Date Handling //
+function formatDateValuesStoreAndValidate(frmToCheck)
+{
+	var lngIdx;
+	var lngControlCount;
+	var elements;
+	var strCtrlName;
+	var strQuestionId;
+	var dtCtrl;
+	var quesCtrl;
+	var strTemp;
+	var strJobId ="empty";
+	var strFromattedDate;
+	elements = frmToCheck.elements;
+			
+	lngControlCount = elements.length;
+
+	for (lngIdx = 0; lngIdx < lngControlCount; lngIdx++)
+	{
+		strJobId= "" ;
+		strCtrlName = elements[lngIdx].name;
+
+		if (strCtrlName.indexOf("Question_") != -1 || (strCtrlName.indexOf("Question") != -1 && strCtrlName.indexOf("_") != -1))
+		{
+			if (strCtrlName.indexOf("|") != -1)
+			{
+				strTemp = strCtrlName.split("|");
+				strCtrlName = strTemp[0];
+				strJobId = "|" + strTemp[1];
+			}
+			/*36727 - JSQ dates are not being captured
+			adding in a check for $ instead of |*/
+			if (strCtrlName.indexOf("$") != -1)
+			{
+				strTemp = strCtrlName.split("$");
+				strCtrlName = strTemp[0];
+				strJobId = "$" + strTemp[1];
+			}
+			strTemp = strCtrlName.split("_");
+			if (strTemp[0] != "Question")
+			{
+				strQuestionId = strTemp[0].substring(8);
+			}
+			else 
+			{
+				strQuestionId = strTemp[1];
+			}
+
+			dtCtrl = eval("frmToCheck.Date_" + strQuestionId + "_Y" + strJobId);
+			
+			//TD41839 - isNaN function is having problems with the variable in NS6.2
+		   	//if ((dtCtrl) && isNaN(dtCtrl))
+			if ((dtCtrl) && (eval("frmToCheck.Date_" + strQuestionId + "_Y" + strJobId))) // Do only if the question is of type Date
+			{
+				quesCtrl = elements[lngIdx];
+				strFromattedDate = dtCtrl.options[dtCtrl.selectedIndex].value;
+						
+				dtCtrl = eval("frmToCheck.Date_" + strQuestionId + "_M" + strJobId);
+				strFromattedDate = strFromattedDate + "-" + dtCtrl.options[dtCtrl.selectedIndex].value;
+
+				dtCtrl = eval("frmToCheck.Date_" + strQuestionId + "_D" + strJobId);
+				strFromattedDate = strFromattedDate + "-" + dtCtrl.options[dtCtrl.selectedIndex].value;
+						
+				if (validateFormattedDate(strFromattedDate))
+				{
+					if (strFromattedDate == '--') strFromattedDate = '';
+					quesCtrl.value = strFromattedDate; 
+				}
+				else
+				{
+					
+					alert(MSG_GEN_PlsEntValdDate);
+
+					dtCtrl.focus();
+					return false;
+				}
+			}					
+		}
+
+	}
+			
+	return true;
+}
+		
+function validateFormattedDate(strFormattedDate, bFutureDateCheck)
+{
+	var lngDay;
+	var lngMonth;
+	var lngYear;
+	var strTemp;
+	
+	strTemp = strFormattedDate.split("-");
+	
+	if(strFormattedDate == "--") return true;
+	if (strTemp.length != 3) return false;
+	if (strTemp[0] == '' && strTemp[1] == '' && strTemp[2] == '') return true;
+	if (strTemp[0] == '' || strTemp[1] == '' || strTemp[2] == '') return false;
+			
+	lngYear = strTemp[0];
+	switch(strTemp[1])
+	{
+		case 'Jan': lngMonth = 1; break;
+		case 'Feb': lngMonth = 2; break;
+		case 'Mar': lngMonth = 3; break;
+		case 'Apr': lngMonth = 4; break;
+		case 'May': lngMonth = 5; break;
+		case 'Jun': lngMonth = 6; break;
+		case 'Jul': lngMonth = 7; break;
+		case 'Aug': lngMonth = 8; break;
+		case 'Sep': lngMonth = 9; break;
+		case 'Oct': lngMonth = 10; break;
+		case 'Nov': lngMonth = 11; break;
+		case 'Dec': lngMonth = 12; break;
+		case '1': lngMonth = 1; break;
+		case '2': lngMonth = 2; break;
+		case '3': lngMonth = 3; break;
+		case '4': lngMonth = 4; break;
+		case '5': lngMonth = 5; break;
+		case '6': lngMonth = 6; break;
+		case '7': lngMonth = 7; break;
+		case '8': lngMonth = 8; break;
+		case '9': lngMonth = 9; break;
+		case '10': lngMonth = 10; break;
+		case '11': lngMonth = 11; break;
+		case '12': lngMonth = 12; break;
+		default: return false;
+	}
+	lngDay = strTemp[2];
+	switch(lngMonth)
+	{
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12:
+			break;
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			if (lngDay == 31) return false;
+			break;
+		case 2:
+			if (lngDay > 29) return false;
+			if (lngDay <= 28) break;
+			if (!(lngDay == '29' && lngYear % 4 == 0 && (lngYear % 100 != 0 || lngYear % 400 == 0))) return false;
+			break;
+		default:
+			return false;
+	}
+	//TD#105467
+	if (typeof(bFutureDateCheck) != 'undefined')
+	if (bFutureDateCheck== true)
+	{
+		var today = new Date;
+		var selectedDate = new Date;
+		selectedDate .setDate(Number(lngDay));
+		selectedDate .setMonth(Number(lngMonth) - 1); // January = 0
+		selectedDate .setFullYear(Number(lngYear)); 		
+		if(selectedDate > today)
+			return false;
+		else
+			return true;
+	}
+
+			
+	return true;
+}
+// Added by RamS for Date Handling - End //
+
+// Added by RamS for Blank value checking //
+function alertIfBlank(ctrlName, strCtrlType, strCtrlText, strDateCtrlPrefix)
+{
+	var strCtrlTypeFormatted;
+	var iIdx;
+	var iCount;
+	var bBlank;
+	var dtCtrl;
+        var Msg; 
+  	var checkedCount;
+	var iCtrarray;
+	var iCtrarray2;
+	var iCtrarray3;
+
+	strCtrlTypeFormatted = strCtrlType.toUpperCase();
+	bBlank = false;
+	switch(strCtrlTypeFormatted)
+	{
+		case 'MULTI-SELECT':
+			iCount = ctrlName.length; 
+			for(iIdx = 0; iIdx < iCount; iIdx++)
+				if (ctrlName[iIdx].selected == true)break;
+			if (iIdx == iCount) bBlank = true;			
+			break;
+		case 'SINGLE-SELECT':
+			if (ctrlName.selectedIndex < 1) bBlank = true;
+			break;
+		case 'SCALESELECT':
+			if (ctrlName.value.toUpperCase().trim() == '') bBlank = true;
+			iCtrarray=ctrlName.value.toUpperCase().trim().split(',');
+			iCount = iCtrarray.length;
+			if (iCount == 0) bBlank = true;
+			for(iIdx = 0; iIdx < iCount; iIdx++)
+				iCtrarray2=iCtrarray[0].split('%%%');
+				iCtrarray3=iCtrarray2[0].split('&=');
+				if (iCtrarray3[1]=='|0|') bBlank = true;
+			break;
+		case 'RADIO':
+		case 'CHECKBOX':
+		case 'GRID':
+		// TD 17005 Madhava -- Handling for only one checkbox 
+			if (ctrlName)
+			{
+				checkedCount = 0;
+				if (ctrlName.length ) {iCount = ctrlName.length;} 
+				else {iCount=1;}			
+				for(iIdx = 0; iIdx < iCount; iIdx++)
+				if (iCount==1)
+				{
+					if (ctrlName.checked ==  true){checkedCount=checkedCount+1;break;}
+				}
+				else
+				{
+					if (ctrlName[iIdx].checked == true){checkedCount=checkedCount+1;break;}
+				}
+				if (checkedCount==0) bBlank = true;	
+				if (iCount>1){ctrlName = ctrlName[0];		}
+			}	
+			break;
+		case 'EMAIL':
+		case 'SSN':
+		case 'TEXT':
+		case 'NUMERIC':
+		case 'TEXTAREA':
+			if (ctrlName.value == '') bBlank = true;
+			if (ctrlName.value.replace(/ /g, "").length == 0) bBlank = true;
+			break;
+		case 'DATE':
+			var bSelYear = false;
+			var bSelMon =false;
+			var bSelDay = false;
+			var strTemp;
+			var strJobId ="";
+			if (strDateCtrlPrefix.indexOf("$") != -1)
+			{		
+				strTemp = strDateCtrlPrefix.split("$");
+				strDateCtrlPrefix= strTemp[0];
+				strJobId = "&" + strTemp[1];				
+			}
+			dtCtrl = eval(strDateCtrlPrefix + "Y" + strJobId);
+			if (dtCtrl.selectedIndex == 0) bSelYear = true;
+			
+			dtCtrl = eval(strDateCtrlPrefix + "M" + strJobId);
+			if (dtCtrl.selectedIndex == 0) bSelMon = true;
+
+			dtCtrl = eval(strDateCtrlPrefix + "D" + strJobId);
+			if (dtCtrl.selectedIndex == 0) bSelDay = true;
+			if (bSelDay == true || bSelMon == true || bSelYear == true) bBlank= true;
+			ctrlName = dtCtrl;
+			break;
+	}
+	
+	if (bBlank)
+	{
+        Msg = ReplaceInString(MSG_GEN_EnterVal, "|QUESTION|",  "\"" + DecodeQuotes(strCtrlText).trim() + "\"");
+        alert(Msg);
+		if (strCtrlTypeFormatted != 'SCALESELECT') ctrlName.focus();
+		return false;
+	}
+	
+	return true;
+}
+// Added by RamS for Blank value checking - End //
+
+// Added by RamS //
+function isValidName(strName)
+{
+	var strInValidChars = "!\"#$%&*/:;?@[\]_{|}~+<=>0123456789";	
+	var iIdx = 0;
+	for (; iIdx < strName.length; iIdx++) 
+	{
+		if (strInValidChars.indexOf(strName.charAt(iIdx), 0) != -1) return false;
+	}
+	return true;
+}
+
+function isValidNumber(strNumber)
+{
+	var strValidChars = "0123456789";
+	var iIdx = 0;
+
+	for (; iIdx < strNumber.length; iIdx++) 
+	{
+		if (strValidChars.indexOf(strNumber.charAt(iIdx), 0) == -1) return false;
+	}
+	
+	return true;
+}
+
+function isValidPhoneNumber(strNumber)
+{	//Added "/" character by RamS TD#30075
+	var strValidChars = "0123456789- X()+./";
+	var iIdx = 0;
+
+	if ((strNumber.length < 5) && (strNumber.length != 0)) return false;
+	for (; iIdx < strNumber.length; iIdx++) 
+	{
+		if (strValidChars.indexOf(strNumber.charAt(iIdx), 0) == -1) return false;
+	}
+	
+	return true;
+}
+
+function isValidWebAddress(strAddress)
+{
+	if (strAddress.length == 0) return true;
+	if (strAddress.indexOf("http://") == -1) 
+	{
+		if (strAddress.indexOf("https://") == -1) return false;
+	}
+	if (strAddress.indexOf(".") == -1) return false;
+	
+	return true;
+}
+
+function isValidYear(strYear)
+{
+	var strValidChars = "0123456789";
+	var iIdx = 0;
+
+	if ((strYear.length != 4) && (strYear.length != 0)) return false;
+	for (; iIdx < strYear.length; iIdx++)
+	{
+		if (strValidChars.indexOf(strYear.charAt(iIdx), 0) == -1) return false;
+	}
+	
+	return true;
+}
+
+function ReplaceInString(str, strFind, strReplace) 
+{
+   // Replaces strFind in str with strReplace and returns replaced text string
+   // 04-04-2003 Venkat	
+
+   var returnStr = str;
+   var start = returnStr.indexOf(strFind);
+   while (start>=0)
+   {
+     returnStr = returnStr.substring(0,start) + strReplace + returnStr.substring(start+strFind.length,returnStr.length);
+     start = returnStr.indexOf(strFind,start+strReplace.length);
+   }
+   return returnStr;
+}
+// Added by RamS - End //
+
+//Added by B.M.Hariharan
+
+function formatTextBoxValuesStoreAndValidate(frmToCheck)
+{	
+	var lngIdx;
+	var lngControlCount;
+	var strCtrlName ;
+	var strTypeName;
+	
+	elements = frmToCheck.elements;
+		
+	lngControlCount = elements.length;
+	for (lngIdx = 0; lngIdx < lngControlCount; lngIdx++)
+	{
+		strCtrlName = elements[lngIdx].name;
+		strTypeName = elements[lngIdx].type;
+		if (strCtrlName.indexOf("Question_") != -1 || (strCtrlName.indexOf("Question") != -1 && strCtrlName.indexOf("_") != -1))
+		{
+			
+				if(elements[lngIdx].type == "text" || elements[lngIdx].type == "textarea")
+				{					
+					if (strCtrlName.toUpperCase().indexOf("CODEQUESTION_YES") !=-1) 
+					{
+						elements[lngIdx].value = elements[lngIdx].value.replace(/\//g,",");
+						
+					}
+					
+					//we will do this on the other side so this ugly formatting goes away
+					//elements[lngIdx].value = elements[lngIdx].value.replace(/,/g,"\=#|");
+					
+					
+					
+				}
+		}
+	}	
+	
+}
+
+//Added by B.M.Hariharan - END
+
+
+//Added by Hari to Trim blank spaces
+function checkBlank(ctrlName,strAlertMsg)
+{
+  var bBlank;
+  bBlank = false;
+
+  if (ctrlName.value == '') bBlank = true;
+  if (ctrlName.value.replace(/ /g, "").length == 0) bBlank = true;     
+  if (bBlank)
+  {
+    alert (strAlertMsg);
+    ctrlName.focus();
+    return false;
+  }
+  return true;
+}
+// End
+
+
+function containsNonPrintableChars(strPassedVal)
+{
+	return false; // Please remove this line when this functionality required..
+	var iIdx, iCount;
+	var iChar;
+	var cChar;
+	var strNonPrintableList = "☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼";
+	
+	for (iIdx = 0, iCount = strPassedVal.length; iIdx < iCount; iIdx++)
+	{
+		cChar = strPassedVal.charAt(iIdx);
+		if (strNonPrintableList.indexOf(cChar) >= 0) break;
+	}
+	
+	if (iIdx != iCount) return true;
+	return false;
+}
+//Added by RamS for TD#20492 to validate year in Addschool and Addjob pages
+function validateYear(startYear,endYear)
+{
+	if (startYear > endYear)
+	{
+		return false;
+	}
+	return true;
+}
+
+//Added By B.M.Hariharan -17FEB2003 - TD 21423
+
+function isValidSSN(strSSNField)
+{
+	
+        var strValidChars = "0123456789-";
+	var strHyphen = "-";
+	var iIdx = 0;
+	var lCount=0;
+	var strSSN = strSSNField.value;
+	
+        for (; iIdx < strSSN.length; iIdx++) 
+	{
+	   if (strValidChars.indexOf(strSSN.charAt(iIdx), 0) == -1) 
+            {
+	      	alert(MSG_GEN_PlsEntVldSSN);
+	      	strSSNField.focus();
+		return;
+	    }
+		
+            if (strHyphen.indexOf(strSSN.charAt(iIdx), 0) >-1) lCount=lCount + 1;
+	    
+	}
+	
+	if (lCount !=2)
+	 {
+		alert(MSG_GEN_PlsEntVldSSN);
+		strSSNField.focus();
+		return;	
+	}
+
+	
+	if ((strSSN.length != 11) ) 
+	{
+		
+		alert(MSG_GEN_SSNFormat);
+		strSSNField.focus();
+		return;
+	}
+	
+	if ((strSSN.charAt(3) != "-") || (strSSN.charAt(6) != "-"))
+	{
+	    alert(MSG_GEN_PlsEntVldSSN);
+	    strSSNField.focus();
+	    return;
+	}
+	
+	
+	return true;
+	
+}
+//Added By B.M.Hariharan -17FEB2003-END
+
+
+//Added By B.M.Hariharan -10MAY2003 - TD 29479
+
+function isNumeric(numField)
+{	
+	var RegExp1 = new RegExp('^[-]?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9]*)?$', 'g'); 	
+	if (!numField.value.match(RegExp1))
+  	{
+		alert(MSG_GEN_PlsEntVldNumber);
+        	numField.focus();
+		return;
+	}
+
+	return true;
+	
+}
+//Added By B.M.Hariharan -10MAY2003 ,TD 29479-END
+
+// TD 23997 -  Date Handling in Search page - Venkat //
+function formatSearchDateValuesStoreAndValidate(frmToCheck)
+{
+	var lngIdx;
+	var lngControlCount;
+	var elements;
+	var strCtrlName;
+	var strQuestionId;
+	var dtCtrl;
+	var quesCtrl;
+	var strTemp;
+	var strJobId ="empty";
+	var strFromattedDate;
+	var lngCtrlIdx;
+	var strFromDate;
+	var strToDate;
+
+	elements = frmToCheck.elements;
+			
+	lngControlCount = elements.length;
+
+	for (lngIdx = 0; lngIdx < lngControlCount; lngIdx++)
+	{
+		strJobId= "" ;
+		strCtrlName = elements[lngIdx].name;
+		if (strCtrlName.indexOf("Question_") != -1 || (strCtrlName.indexOf("Question") != -1 && strCtrlName.indexOf("_") != -1))
+		{
+			if (strCtrlName.indexOf("|") != -1)
+			{
+				strTemp = strCtrlName.split("|");
+				strCtrlName = strTemp[0];
+				strJobId = "|" + strTemp[1];
+			}
+			strTemp = strCtrlName.split("_");
+			if (strTemp[0] != "Question")
+			{
+				strQuestionId = strTemp[0].substring(8);
+			}
+			else 
+			{
+				strQuestionId = strTemp[1];
+			}
+
+			dtCtrl = eval("frmToCheck.Date_" + strQuestionId + "_Y" + strJobId);
+
+		   	//TD41839 - isNaN function is having problems with the variable in NS6.2
+		   	//if ((dtCtrl) && isNaN(dtCtrl))
+			if ((dtCtrl) && (eval("frmToCheck.Date_" + strQuestionId + "_Y" + strJobId))) // Do only if the question is of type Date
+			{
+			  quesCtrl = elements[lngIdx];
+			  quesCtrl.value = '';
+
+			  for (lngCtrlIdx = 0; lngCtrlIdx < dtCtrl.length ; lngCtrlIdx++)
+			  {
+				dtCtrl = eval("frmToCheck.Date_" + strQuestionId + "_Y" + strJobId);
+				strFromattedDate = dtCtrl[lngCtrlIdx].options[dtCtrl[lngCtrlIdx].selectedIndex].value;
+						
+				dtCtrl = eval("frmToCheck.Date_" + strQuestionId + "_M" + strJobId);
+				
+				strFromattedDate = strFromattedDate + "-" + dtCtrl[lngCtrlIdx].options[dtCtrl[lngCtrlIdx].selectedIndex].value;
+
+				dtCtrl = eval("frmToCheck.Date_" + strQuestionId + "_D" + strJobId);
+
+				strFromattedDate = strFromattedDate + "-" + dtCtrl[lngCtrlIdx].options[dtCtrl[lngCtrlIdx].selectedIndex].value;
+						
+				if (validateFormattedDate(strFromattedDate))
+				{
+					if (strFromattedDate == '--') 
+						strFromattedDate = '';
+						
+					//Hari - validation for Date FROM < TO if FROM,TO <> "" 
+					if ( strFromattedDate != '')
+ 					  {
+					  if (lngCtrlIdx == 0 )
+						{
+					  	 strFromDate = strFromattedDate;
+ 						 strFromDate = getUTC(strFromDate); 
+						}	
+					  else
+						{
+					  	 strToDate = strFromattedDate;
+ 						 strToDate = getUTC(strToDate);
+						}
+					    if(strFromDate > strToDate)
+						{
+						  alert(MSG_GEN_FromToDate);
+						  dtCtrl[0].focus();	
+						  return false;	
+						}		
+					  }
+
+					  if (quesCtrl.value == '') 
+					  {
+						quesCtrl.value = " AnswerName&=|" + strFromattedDate + "=X|%%%AnswerValue&=|" + strFromattedDate + "=X|%%%GDEAnswerValue&=|=X|???,";
+					  }
+					  else 
+					  {
+						quesCtrl.value = quesCtrl.value + " " +" AnswerName&=|" + strFromattedDate + "=X|%%%AnswerValue&=|" + strFromattedDate + "=X|%%%GDEAnswerValue&=|=X|???";
+					  }					
+					 
+				}
+				else
+				{
+					
+					alert(MSG_GEN_PlsEntValdDate);
+
+					dtCtrl[lngCtrlIdx].focus();
+					return false;
+				}
+			   }
+			}					
+
+		}
+
+	}
+	
+		
+	return true;
+}
+
+function passwdCheck(passwdField)
+{
+  var spaceChars = " ";
+
+  var strPasswdText;
+
+  strPasswdText= passwdField.value;
+
+  if (strPasswdText.indexOf(spaceChars,0) > -1)
+	 {
+	 alert(MSG_GEN_EnterValidPassword);
+         passwdField.focus();
+         return false;
+      	}
+  
+  var RegExp1 = new RegExp('^[\u0020-\u007e\u00a0-\uffff\s]+$', 'g'); 
+  if (!passwdField.value.match(RegExp1))
+  	{
+	alert(MSG_GEN_EnterValidPassword);
+        passwdField.focus();
+        return false;
+	}
+  
+ return true;
+
+}
+
+
+
+//Returns the number of milliseconds for given Date String since January 1, 1970, 00:00:00, //Universal Coordinated Time (GMT). Takes Date string parameter in the format YYYY-MMM-DD. //Calculates an year Offset based on 1900, Converts the month name string in the format MMM //e.g., apr into equivalent month number. Fits that month number into a 0-11 format. 
+//Finally, uses UTC method of date object and returns.
+//Venkat 04-15-2003 for TD 23997
+function getUTC(strDate)
+{
+
+  var lngMonth;	
+  var strMonthName;
+  var lngYear;
+  
+  var arrDt = strDate.split("-");
+ 
+  lngYear = arrDt[0];
+  lngYear = lngYear - 1900 ; //Date Offset
+
+  strMonthName = arrDt[1]; 
+
+  switch(strMonthName)
+  {
+	case 'Jan': lngMonth = 1; break;
+	case 'Feb': lngMonth = 2; break;
+	case 'Mar': lngMonth = 3; break;
+	case 'Apr': lngMonth = 4; break;
+	case 'May': lngMonth = 5; break;
+	case 'Jun': lngMonth = 6; break;
+	case 'Jul': lngMonth = 7; break;
+	case 'Aug': lngMonth = 8; break;
+	case 'Sep': lngMonth = 9; break;
+	case 'Oct': lngMonth = 10; break;
+	case 'Nov': lngMonth = 11; break;
+	case 'Dec': lngMonth = 12; break;
+	case '1': lngMonth = 1; break;
+	case '2': lngMonth = 2; break;
+	case '3': lngMonth = 3; break;
+	case '4': lngMonth = 4; break;
+	case '5': lngMonth = 5; break;
+	case '6': lngMonth = 6; break;
+	case '7': lngMonth = 7; break;
+	case '8': lngMonth = 8; break;
+	case '9': lngMonth = 9; break;
+	case '10': lngMonth = 10; break;
+	case '11': lngMonth = 11; break;
+	case '12': lngMonth = 12; break;
+	default: return false;
+   }
+   lngMonth = lngMonth - 1;	
+	
+   return (Date.UTC(lngYear , lngMonth , arrDt[2]));
+}
+
+
+
+
+// Added by WMF for Numeric Field Range checking //
+function alertIfOutOfRange(ctrlName, strCtrlText, strMinValue, strMaxValue)
+{
+
+	var bOutOfRange;	
+	var num;
+	bOutOfRange = false;
+
+	if (!isValidNumber(ctrlName.value))
+	{
+        alert(MSG_GEN_PlsEntVldNumber);
+	ctrlName.focus();
+		return false;
+	}
+	
+	if ( strMinValue == strMaxValue )
+	{
+		if ( strMinValue == 0 )
+		{
+			return true;
+		}	
+		
+	}
+	
+	num = parseInt(ctrlName.value,10);
+
+   
+	if (num  < strMinValue || num  > strMaxValue)
+   	{
+      		bOutOfRange = true;
+   	}
+	
+	if (bOutOfRange)
+	{
+        Msg = ReplaceInString(MSG_GEN_EnterValRange, "|QUESTION|",  "\"" + strCtrlText +  "\"");
+        Msg = ReplaceInString(Msg, "|MIN|", strMinValue );
+        Msg = ReplaceInString(Msg, "|MAX|", strMaxValue );
+        alert(Msg);
+	ctrlName.focus();
+		return false;
+	}
+	
+	return true;
+}
+
+//  Added by WMF for Numeric Field Range checking - End //
+
+
+//  Added by ADK for decoding XML on the client - Begin //
+
+function XmlDecode(sText) {
+    sText = sText.replace(/\&amp;/g,"&");
+    sText = sText.replace(/\&lt;/g,"<");
+    sText = sText.replace(/\&gt;/g,">");
+    //sText = sText.replace(/\&apos;/g,"'");
+    sText = sText.replace(/\&quot;/g,'"');
+    return sText;
+}
+
+//  Added by ADK for decoding XML on the client - End //
+
+
+// Added by WMF 11/05/2003--to read query string values from client side //
+//
+// QueryString
+//
+
+function QueryString(key)
+{
+	var value = null;
+	for (var i=0;i<QueryString.keys.length;i++)
+	{
+		if (QueryString.keys[i]==key)
+		{
+			value = QueryString.values[i];
+			break;
+		}
+	}
+	return value;
+}
+
+QueryString.keys = new Array();
+QueryString.values = new Array();
+
+function QueryString_Parse()
+{
+	var query = window.location.search.substring(1);
+	var pairs = query.split("&");
+	
+	for (var i=0;i<pairs.length;i++)
+	{
+		var pos = pairs[i].indexOf('=');
+		if (pos >= 0)
+		{
+			var argname = pairs[i].substring(0,pos);
+			var value = pairs[i].substring(pos+1);
+			QueryString.keys[QueryString.keys.length] = argname;
+			QueryString.values[QueryString.values.length] = value;		
+		}
+	}
+
+}
+
+QueryString_Parse();
+
+
+		function getCookie(cookieName)
+		{
+		 	var cookieValue =	  null;
+			if(document.cookie)	   //only if exists
+			{
+		       	var arr = 		  document.cookie.split((escape(cookieName) + '=')); 
+		       	if(2 <= arr.length)
+		       	{
+		           	var arr2 = 	   arr[1].split(';');
+		       		cookieValue  = 	   unescape(arr2[0]);
+		       	}
+			}
+			return cookieValue;
+		}		
+
+
+function getLocaleId(strSiteId,arrSiteLocaleLangList)
+{
+	var arr1 = arrSiteLocaleLangList.split('||');				
+	var strTempSiteId;
+	var arr2;
+	var arr3;
+
+	arr2 = arr1[0].split(',');
+	arr3 = arr1[2].split(',');
+	for (var lIdx = 0; lIdx < arr2.length; lIdx++)					
+	{
+		if (strSiteId == arr2[lIdx])
+		{
+			return arr3[lIdx];
+		}
+	}
+}	
+
+//  Added by ADK for trimming whitespace - Begin //
+
+function strtrim() 
+{
+return this.replace(/^\s+/,'').replace(/\s+$/,'');
+}
+
+String.prototype.trim = strtrim;
+
+//  Added by ADK for trimming whitespace - End //
+
+function DecodeQuotes(sText) {
+    sText = sText.replace(/\&quot;/g,'"');
+    
+    return sText;
+}
+
+function DecodeSingleQuotes(sText) {
+    sText = sText.replace(/\&apos;/g,'"');
+    
+    return sText;
+}
+
+function EncodeComma(sText) {
+    var intTextlength = 0;
+    var strOneChar = "";
+    var strNewText = "";
+    
+    intTextlength = sText.length;
+    
+    for (var i=0;i < intTextlength; i++)
+		 {strOneChar = sText.charAt(i);
+                   if (sText.charAt(i) == ",")
+		     strOneChar = "&comma;";
+
+		   strNewText = strNewText + strOneChar;
+		 }
+    return strNewText;
+}
+
+function userNameCheck(usernameField) {
+    if (usernameField.value.length > 100)
+    {
+	alert(MSG_GEN_UserNameLength);
+        usernameField.focus();
+        return false;
+    }
+
+    if (usernameField.value.indexOf(' ') > 0)
+    {
+	alert(MSG_GEN_UserNameSpaces);
+        usernameField.focus();
+        return false;
+    }
+    var RegExp1 = new RegExp('^[\u0021-\u003b=\u003f-\u007e\u009f-\uffff\s]+$', 'g'); // Regular Expression for UserName	
+    if (!usernameField.value.match(RegExp1))
+    {
+	alert(MSG_GEN_UserNameInvalidChars);
+        usernameField.focus();
+        return false;
+    }
+
+    
+    return true;
+}
+
+function XmlEncodeForEduExp(sText) {
+    var intTextlength = 0;
+    var strOneChar = "";
+    var strNewText = "";
+    
+    intTextlength = sText.length;
+    
+    for (var i=0;i < intTextlength; i++)
+		 {strOneChar = sText.charAt(i);
+                   if (sText.charAt(i) == "&")
+		     strOneChar = "__AMP__";
+		   if (sText.charAt(i) == "<")
+   			strOneChar = "__LT__";
+ 		   if (sText.charAt(i) == ">")
+  			strOneChar = "__GT__";
+		   if (sText.charAt(i) == '"')
+  			strOneChar = "__QUOT__";
+		   if (sText.charAt(i) == "'")
+  			strOneChar = "__APOS__";	
+
+		   strNewText = strNewText + strOneChar;
+		 }
+    return strNewText;
+}
+
+function XmlDecodeForEduExp(sText) {
+    var intTextlength = 0;
+    var strOneChar = "";
+    var strNewText = "";
+    
+    intTextlength = sText.length;
+
+    sText = sText.replace("__AMP__","&");
+    sText = sText.replace("__LT__","<");
+    sText = sText.replace("__GT__",">");
+    sText = sText.replace('__QUOT__','"');
+    strNewText = sText.replace("__APOS__","'");
+   
+    return strNewText;
+}
+
+function emailCheckNew(emailField,switchTo)
+{
+	var bInValidEmail;
+	bInValidEmail = false;
+
+	if(emailField.value.replace(/ /g, "").length != 0)
+	{
+		
+		var RegExp1 = new RegExp('^[a-zA-Z0-9ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ!#$%&\'/*/+-///=/?/^_`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$', 'g'); // Regular Expression for Email
+		if (!emailField.value.match(RegExp1))
+		{
+			bInValidEmail = true;
+		}
+	}
+
+
+	if (!checkDBQuoteNew(emailField))
+	{
+		bInvalidEmail = true;
+	}
+	if ( bInValidEmail )
+	{
+		switchIt(document.getElementById(switchTo));
+		alert(MSG_GEN_EntValdEmlAddr); 		    
+		emailField.focus();
+		return false;
+	}
+		
+	return true;
+}
+
+// clear all field values
+function _ClearAllFields(formName) 
+{
+	with (document.forms[formName]) 
+	{
+		var n;
+		for (n=0; n<elements.length; n++) 
+		{
+			if (elements[n].type != 'hidden' && elements[n].type != 'button')
+			{
+				if (elements[n].type != 'radio' && elements[n].type != 'checkbox')
+					elements[n].value = '';
+				else
+				{
+					if (elements[n].checked == true)
+						elements[n].checked = false;
+				}
+			}
+		}
+	}
+}
+
+function containsNonHTMLTag(strPassedVal)
+{
+    if (strPassedVal.indexOf("<") >= 0 || strPassedVal.indexOf(">") >=0) return true;
+    return false;
+}
+
+//RDP-413 following function is added for input validation of form fields 
+function alertIfInputValidationFails(ctrlName, strCtrlText, strRegx)
+{
+	//if candidate is not entered any data, don't aplly validation logic. Exit from here
+	if(ctrlName.value == '' || ctrlName.value.replace(/ /g, "").length == 0)
+	{
+		return true;
+	}
+	var Msg;	
+	var valueToValidate = ctrlName.value;	
+	
+	var RegExp1 = new RegExp(strRegx);
+	//var RegExp1 = new RegExp('^[a-zA-Z]+$');	//only chars
+	//var RegExp1 = new RegExp('^[0-9]+$');  //only numbers
+	
+	if (valueToValidate.match(RegExp1) == null)
+	{	
+		Msg = ReplaceInString(MSG_InputValidationFail, "[QUESTION]",  "\"" + DecodeQuotes(strCtrlText) + "\"");
+		alert(Msg);
+		ctrlName.focus();
+		return false;
+	}
+	
+	return true;
+}	
+
+</script>
+<script language="JavaScript" type="text/javascript" src="../../../Template/Scripts/TSValidate.js"></script>
+<style type="text/css">
+<!--
+.PBnbspSize {  font-size: 15px;}
+.PBdashSize {  font-size: 16px; }
+.PBwingdingsSize1 {   font-size: 18px; }
+.PBwingdingsSize3 {   font-size: 24px; }
+.PBSectionImgSize {    }
+.PBSeparatorImgSize {   height: 10px; width: 100%; }
+-->
+</style>
+
+
+<script></script>
+<NOSCRIPT>In order to access this site, you need to enable Javascript. To change this setting, please refer to your browser's documentation.</NOSCRIPT>
+<html>
+<head>
+<title>Archstone - Job details</title><META name='description' content='Search information technology and Internet job openings. Locate job fairs and career events. Post resumes to high tech employers.' </META>
+	
+	
+	<script language="JavaScript" type="text/javascript" src="../../../Template/Scripts/windows.js"></script>
+	<NOSCRIPT>In order to access this site, you need to enable Javascript. To change this setting, please refer to your browser's documentation.</NOSCRIPT>
+	<script language="JavaScript" type="text/javascript" src="/css/Partner_25152_5244.js"></script>
+	<NOSCRIPT>In order to access this site, you need to enable Javascript. To change this setting, please refer to your browser's documentation.</NOSCRIPT><NOSCRIPT>In order to access this site, you need to enable Javascript. To change this setting, please refer to your browser's documentation.</NOSCRIPT><NOSCRIPT>In order to access this site, you need to enable Javascript. To change this setting, please refer to your browser's documentation.</NOSCRIPT>
+	<script language="JavaScript">
+	function getWidth()
+	{
+		if (document.layers)
+		{
+			var w = window.innerWidth;
+			var n = w - 180;
+			var theimage = "<img src='../../images/pixel.gif' alt='' height=1 width=" + n +"border=1>";
+			return theimage;
+		}
+	}
+
+	//Following Function Added by UmaShankar on 11/29/2001
+	function goToSearchPage()
+	{
+		document.frmSearch.submit();
+	}
+	function showjob(lngNewSelection)
+	{   
+	    //''"RDP 294: Added amp; replace.
+		document.frmJobDetail.action = "cim_jobdetail.asp?partnerid=25152&siteid=5244&jobid=216081";
+		document.frmJobDetail.CurSel.value= lngNewSelection;
+		document.frmJobDetail.submit();
+	}
+	function sendToFriend()
+	{
+		openWindow3('about:blank?sessionid=7BEF12C6DE2D6C612D49E62DB15E2D12C30A084F0B7D');
+		document.frmSendToFriend.submit();
+	}
+	
+	function launchSocialMedia()
+	{
+	    openWindow1('about:blank?sessionid=7BEF12C6DE2D6C612D49E62DB15E2D12C30A084F0B7D');
+		document.frmSocialMedia.submit();
+    }
+
+	function saveToJobCart()
+	{
+		var strTemp;
+		var lIdx;
+		var lLen;
+		var arrSubInfo;
+
+		if (document.frmJobDetail.jobcartcnt.value > 50)
+			alert (MSG_cim_jobdetail_JobCart);
+		else
+		{
+			document.frmSaveToCart.chkJobClientIds.value = ReplaceInString(document.frmSaveToCart.chkJobClientIds.value, "%%", "");
+			arrSubInfo = document.frmSaveToCart.chkJobClientIds.value.split("|");
+			//09-09-02 GTG - Added JobReqLang - Venkat
+
+			if(arrSubInfo.length != 3)
+			{
+				strTemp =  arrSubInfo[0] + "|" + arrSubInfo[1];
+				document.frmSaveToCart.chkJobClientIds.value = strTemp;
+			}
+
+			openWindow3('about:blank?sessionid=7BEF12C6DE2D6C612D49E62DB15E2D12C30A084F0B7D');
+			document.frmSaveToCart.submit();
+		}
+	}
+
+	// Following function added by Sathyanarayanan K on 04/20/2005 for Selectedjobs
+	function ApplyJobNow(strLocale)
+	{
+		var strGQId;
+		var iLen, iIndx;
+		var arrGQId;
+		var arrGQIds;
+		var lngNewSelection = 0;
+		var lngSiteLocale = "1033"
+		strGQId = "0";	// from Querystring
+
+		var lngSelect = 1;
+		if  (strGQId == '')
+		{
+			strGQId= document.frmJobDetail.JobInfo.value;
+			arrGQId = (strGQId.substring(2, strGQId.length - 2)).split("%%");
+			iLen = arrGQId.length;
+			arrGQIds = arrGQId[lngSelect-1].split('|');
+			if (arrGQIds[2] != 0)
+			{
+				if (strLocale == lngSiteLocale)
+				{
+					openWindow11("/" + strLocale + "/asp/tg/GQLogin.asp?SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR&fjd=true&referer=&gqid="+ arrGQIds[2] + "&jobinfo=__" + arrGQId[lngSelect-1] + "__&applycount=1&type=search_jobdetail");
+				}
+				else
+				{
+				    document.frmMassApply.GQID.value = arrGQIds[2];
+				    
+					document.frmMassApply.action= "/" + strLocale + "/asp/tg/apply.asp?SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR&src=jd&qs=partnerid%3D25152%26siteid%3D5244%26jobid%3D216081";
+					
+					document.frmMassApply.submit();
+				}
+			}
+			else
+			{
+				document.frmMassApply.action= "/" + strLocale + "/asp/tg/apply.asp?SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR";
+				document.frmMassApply.submit();
+			}
+		}
+		else
+		{
+	
+			if (strGQId != 0)
+			{
+			    if (strLocale == lngSiteLocale)
+				{
+					openWindow11("/" + strLocale + "/asp/tg/GQLogin.asp?SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR&fjd=true&referer=&gqid=" + document.frmMassApply.GQID.value + "&jobinfo=__216081|1|0__&applycount=1&type=search_jobdetail");
+				}
+				else
+				{
+				    
+					document.frmMassApply.action= "/" + strLocale + "/asp/tg/apply.asp?SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR&src=jd&qs=partnerid%3D25152%26siteid%3D5244%26jobid%3D216081";
+					
+					document.frmMassApply.submit();
+				}
+     	    }
+     	    else
+     		{
+     			document.frmMassApply.action		= "/" + strLocale + "/asp/tg/Apply.asp?SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR";
+				document.frmMassApply.submit();
+     		}
+     	}
+	}
+	// End
+
+	function ApplyAsRegularJob()
+	{
+		document.frmMassApply.target = "_self";
+		document.frmMassApply.GQID.value = "0";
+		document.frmMassApply.action = "apply.asp?SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR";
+		document.frmMassApply.submit();
+	}
+
+	// TD:74615 : Added by Sathyanarayanan K on 29.07.2005
+	function reload(sParam)
+	{
+		if (typeof(sParam) != 'undefined') 
+		{
+			if (sParam == 'ApplyAsRegularJob')
+				ApplyAsRegularJob();
+			return;
+		}
+		var sGQId =  "0";
+		var arrGQId;
+		var iLen = 0;
+		if (sGQId == '' )
+		{
+			sGQId= document.frmJobDetail.JobInfo.value;
+			arrGQId = (sGQId.substring(2, sGQId.length - 2)).split("%%");
+			iLen = arrGQId.length;
+		}
+		
+		if ((iLen == 1) || (sGQId != ''))
+		{
+			
+		document.frmJobDetail.target = "_self";
+		document.frmJobDetail.CurSel.value = "";
+		document.frmJobDetail.action = "Logout.asp?SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR&gqclose=yes&crl=yes&Exit=^kOrPIAkw5kv7mKe0ExOmHdsKEKIlMJ7VkD4PEWtcjpPDzsG/yfceIuN1BjnrYlozOeRWq/do6xCKGjNaWnNI4ux/wZJyGbF3r1T49vrjefamFgXwYsbzdCg3M6XYcviRr+oQkbYohmBOVbJuGZhWX6XatvDNr/jAuUeNHkJ1yU2eZBe9UP/u45/O/Cedx9F/saQpwDdcCy+k1I+1ootvXSQW2Nx7shM7tZv/XXQbiwivZ93kJhdOv2hnZl4Hipkpg+D1C5YpT1jHbXNFcYwnGAe7XjT2J8+xREcq864bL0jQLfiFKMf+OA==";
+		document.frmJobDetail.submit();
+		}
+	}
+
+	//Following function Added by UmaShankar on 12/26/2001 for Mass apply from jobdetail
+	function ApplyNow()
+	{
+		// Start of changes TD 	35552 .. 7/22/2003
+			var ApplyURL = "";
+
+				if (ApplyURL=="-1" ) ApplyURL= "";
+				if (ApplyURL.length>0 )
+				{
+				
+				 window.location.href=ApplyURL; 
+				 }
+				else
+				//In case GTG if the job siteid is different than the current siteid
+				//display warning pop-up to confirm site switched to job site
+				{
+				
+				
+					
+						ApplyJobNow('1033');
+					
+				}
+
+// End of Changes
+	}
+	//End Add
+
+	</script>
+	<NOSCRIPT>In order to access this site, you need to enable Javascript. To change this setting, please refer to your browser's documentation.</NOSCRIPT>
+</head>
+	<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" >
+	
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td align="center" width="100%">
+					<table border="0" cellspacing="0" cellpadding="0"  >   <tr><td><img src="/img/images_25152_5244/F_CL5244.gif"/></td></tr></table>
+				</td>
+			</tr>
+		</table>
+	
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		
+		<td valign="top" height ="100%">
+			
+		</td>
+		
+		<td width="8">
+			<!-- spacer -->
+			<img src="../../images/pixel.gif" alt="" width="10">
+		</td>
+		
+
+		<!--Begin-->
+		<td valign="top" align="left" width="100%">
+			
+
+<a name="top">
+
+
+<form name="frmSearch" method="post" action="cim_searchresults.asp?ref=4132011163852&SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR&referer=search">
+<input TYPE="HIDDEN" NAME="recordstart" VALUE="1">
+
+	<input TYPE="HIDDEN" NAME="JobInfo" VALUE="">
+
+<input TYPE="HIDDEN" NAME="CartJobInfo" VALUE="%%216081|1|0%%">
+
+	<input TYPE="HIDDEN" NAME="JMSimilarJobCriteria2" VALUE=' <#AND> <LIKE>("{216081-25152-5244}")'>
+
+<input TYPE="HIDDEN" NAME="JMSimilarJobCriteria" VALUE=''>
+
+</form>
+
+
+
+<form name="frmSendToFriend" method="post" action="cim_pop_emailtofriend.asp?SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR" target="7BEF12C6DE2D6C612D49E62DB15E2D12C30A084F0B7D">
+	<input type="hidden" name="JobInfo" value="%%216081|1|0%%">
+	<input type="hidden" name="VerityQuery" value="( PartnerId=25152 )&lt;#AND&gt;( SiteId=5244 ) &lt;#AND&gt;(dateopen &lt;= 2011/04/13)&lt;#AND&gt;(dateclosed &gt;= 2011/04/13 16:38:52)">
+	<input type="hidden" name="JobSiteInfo" value="216081_5244">
+</form>
+<form name="frmSaveToCart" method="post" action="cim_pop_savejobs.asp?SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR" target="7BEF12C6DE2D6C612D49E62DB15E2D12C30A084F0B7D">
+	<input type="hidden" name="chkJobClientIds" value="%%216081|1|0%%">
+	<input TYPE="HIDDEN" NAME="JobSiteInfo" VALUE="216081_5244,">
+</form>
+<form name="frmSocialMedia" method="post" action="SocialMedia_pop.asp?SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR" target="7BEF12C6DE2D6C612D49E62DB15E2D12C30A084F0B7D">
+	<input type="hidden" name="jobid" value="216081">
+</form>
+<form name="frmMassApply" method="post">
+	<input TYPE="HIDDEN" NAME="JobInfo" VALUE="%%216081|1|0%%">
+	<input TYPE="HIDDEN" NAME="jv_JobInfo" VALUE="">
+	<input TYPE="HIDDEN" NAME="recordstart" VALUE="1">
+	<input TYPE="HIDDEN" NAME="CurSel" VALUE="1">
+	<input TYPE="HIDDEN" NAME="JobSiteInfo" VALUE="216081_5244">
+	<input TYPE="HIDDEN" NAME="type" VALUE="search_jobdetail">
+	<input TYPE="HIDDEN" NAME="GQID" VALUE="0">
+	<input TYPE="HIDDEN" NAME="ApplyCount" VALUE="1">
+	
+
+</form>
+
+
+
+
+<form name="frmJobDetail" method="post">
+<input type="hidden" name="jobcartcnt" value="0">
+
+<input TYPE="HIDDEN" NAME="JobInfo" VALUE="">
+<input TYPE="HIDDEN" NAME="JobSiteInfo" VALUE="216081_5244">
+<input TYPE="HIDDEN" NAME="recordstart" VALUE="1">
+<input TYPE="HIDDEN" NAME="CurSel" VALUE="1">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+  
+	<tr>
+		<td vAlign=top align=left width="80%">
+			<table border="0" cellspacing="0" cellpadding="0" class="breadcrumbtable"><tr><td valign="middle"><font class="PBnbspSize" face="Courier">&nbsp;</font></td><td valign="middle"><font class="PBnbspSize" face="Courier">&nbsp;</font></td><td valign="middle"><font class="PBnbspSize" face="Courier">&nbsp;</font></td><td valign="middle"><font class="PBnbspSize" face="Courier">&nbsp;</font></td><td width="%" align="center" nowrap valign="bottom"><font class="PBwingdingsSize1" face="Wingdings 2" color="#3D5D9C">Å</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" align="center" nowrap valign="bottom"><font class="PBwingdingsSize1" face="Wingdings 2" color="#3D5D9C">Å</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" align="center" nowrap valign="bottom"><font class="PBwingdingsSize1" face="Wingdings 2" color="#3D5D9C">Å</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td width="%" valign="middle"><font class="PBdashSize" face="Courier" color="#3D5D9C">▬</font></td><td  width="%" align="center" nowrap valign="bottom"><font class="PBwingdingsSize1" face="Wingdings 2" color="#3D5D9C">›</font></td><td valign="middle"><font class="PBnbspSize" face="Courier">&nbsp;</font></td><td valign="middle"><font class="PBnbspSize" face="Courier">&nbsp;</font></td><td valign="middle"><font class="PBnbspSize" face="Courier">&nbsp;</font></td><td valign="middle"><font class="PBnbspSize" face="Courier">&nbsp;</font></td></tr><tr><td valign="top" align="center" resize="no" nowrap="no" colspan="9"><span class="COOKIEcrumbtext"><a href="cim_home.asp?SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR">Home</a></span></td><td valign="top" align="center" resize="no" nowrap="no" colspan="9"><span class="COOKIEcrumbtext"><a href="cim_advsearch.asp?SID=^jmWxhkcl9lFNn6jxFmO0gd8ax_slp_rhc_fOs2BsTRe8sYbKJ9vtO7ToggAEkeISCiHEybSR&ref=4132011163852">Search <br> openings</a></span></td><td valign="top" align="center" resize="no" nowrap="no" colspan="9"><span class="COOKIEcrumbtext"><a href="javascript:void(0);goToSearchPage();">Search <br> results</a></span></td><td valign="top" align="center" resize="no" nowrap="no" colspan="9"><span class="COOKIEcrumbtext">Job <br> details</span></td></tr><tr><td colspan="100">&nbsp;</td></tr></table>
+
+		<!-- cookie crumbs -->
+		<!--
+		<table class="COOKIEcrumbs" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr><td height="3" colspan="5" class="COOKIEcrumbback"><img height="3" alt="" src="../../images/pixel.gif"></td></tr>
+			<tr>
+				<td width="10" class="COOKIEcrumbback"><img src="../../images/pixel.gif" alt="" width="10"></td>
+				<td width="90%" class="COOKIEcrumbback"><span class="COOKIEcrumbtext"><a href="cim_home.asp">Home</a> &gt;
+				
+					<a href="cim_advsearch.asp?ref=4132011163852">Search openings</a> &gt; <a href="javascript:void(0);goToSearchPage();">Search results</a> &gt; Job details
+				</td>
+				<td align="right" nowrap="nowrap" class="COOKIEcrumbback"><a href="javascript:openWindow6('help/TG_help.asp?&type=help%23cim_jobdetail_help');" title="View help for this window"><img src="../../images/icon_help_small.gif" alt="View help for this window" valign="bottom" border="0"></a></td>
+				<td align="left" nowrap="nowrap" class="COOKIEcrumbback"><a href="javascript:openWindow6('help/TG_help.asp?&type=help%23cim_jobdetail_help');" title="View help for this window" class="HELPlink">Help</a></td>
+				<td width="10" class="COOKIEcrumbback"><img src="../../images/pixel.gif" alt="" width="10"></td>
+			<tr><td colspan="5" class="COOKIEcrumbback"><img src="../../images/pixel.gif" alt="" height="10" width="1"></td></tr>
+			<tr><td colspan="5"><img src="../../images/pixel.gif" alt="" height="10" width="1"></td></tr>
+			</tr>
+		</table>
+		-->
+
+		</td>
+		<td width="20%">
+		
+			<table class="COOKIEcrumbs" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td align="right" nowrap="nowrap" class="COOKIEcrumbback"><a href="javascript:openWindow6('help/TG_help.asp?&type=help%23cim_jobdetail_help');" title="View help for this window"><img src="../../images/icon_help_small.gif" alt="View help for this window" valign="bottom" border="0"></a></td>
+					<td align="left" nowrap="nowrap" class="COOKIEcrumbback"><a href="javascript:openWindow6('help/TG_help.asp?&type=help%23cim_jobdetail_help');" title="View help for this window" class="HELPlink">Help</a></td>
+					<td width="10" class="COOKIEcrumbback"><img src="../../images/pixel.gif" alt="" width=10></td>
+					<td colspan="5" class="COOKIEcrumbback"><img src="../../images/pixel.gif" alt="" height="10" width="1"></td>
+				</tr>
+			</table>
+			
+		</td>
+	</tr>
+	
+
+	<tr>
+	<td valign="top" width="80%">
+	
+	<!--begin primary content of page-->
+		<table width="92%" border="0" cellpadding="0" cellspacing="0" align="center">
+
+			
+				<tr>
+					<td class="PAGEtitleTabback" width="10" height="20" nowrap="nowrap" valign="abstop"><img src="../../images/left_tab_inactive.gif" alt="" width="10" height="20" /></td>
+					<td class="PAGEtitleTabback" nowrap><span class="PAGEtitleTabtext">Job details</span></td>
+					<td class="PAGEtitleTabback" width="10" height="20" nowrap="nowrap" align="right" valign="abstop"><img src="../../images/right_tab_inactive.gif" alt="" width="10" height="20" /></td>
+					<td width="90%" valign="bottom">&nbsp;</td>
+				</tr>
+				<tr>
+					<td height="1" colspan="3" class="PAGEtitleTabback"><img src="../../images/pixel.gif" alt="" height="2"></td>
+					<td width="90%"><img src="../../images/pixel.gif" alt="" height="1"></td>
+				</tr>
+			
+			<tr><td height="0" colspan="4" class="BRANDINGdom2dark"><img src="../../images/pixel.gif" alt="" height="1"></td></tr>
+		</table>
+	
+		<table width="92%" border="0" cellPadding="2" cellSpacing="0" align="center">
+			<tr><td colSpan="5"><img height="2" alt="" src="../../images/pixel.gif"></td></tr>
+			<tr>
+				
+<!--					<td width="10%">&nbsp; </td>-->
+				
+
+				<td colspan="5" align="center" valign="middle" nowrap class="SMALLtext" ><b>
+				Job 1</b> of 1 </td>
+
+				
+					<!--<td width="10%">&nbsp; </td>-->
+				
+			</tr>
+
+			<tr><td colSpan="5"><img height="4" alt="" src="../../images/pixel.gif"></td></tr>
+		</table>
+<table width="92%" border="0" cellPadding="3" cellSpacing="0" align="center">
+	<tr>
+	<td align="center" nowrap>
+	
+			<label for="button1"></label><input type="button" class="REGbutton" value="Apply to Job(s)"  id=button1 name=button1 onClick="javascript:ApplyNow();"> &nbsp;&nbsp;
+			
+			<label for="button2"></label><input type="button" class="REGbutton" value="Send to friend" id=button2 name=button2 onClick="javascript:sendToFriend();"> &nbsp;&nbsp;
+			
+			<label for="button3"></label><input type="button" class="REGbutton" value="Save to cart" id=button3 name=button3 onClick="javascript:saveToJobCart();"> &nbsp;&nbsp;
+			
+				<label for="button4"></label><input type="button" class="REGbutton" value="View similar jobs" id=button4 name=button4 onClick="javascript: frmSearch.JMSimilarJobCriteria.value = frmSearch.JMSimilarJobCriteria2.value; goToSearchPage();"> &nbsp;&nbsp;
+			
+		<!--RDP 294:Start-->
+		
+	</td>
+	</tr>
+</table>
+
+<table width="92%" border="0" cellPadding="3" cellSpacing="0" align="center">
+		
+		
+		<tr><td colspan="2"><IMG alt="" height="4" src="../../images/pixel.gif"></td></tr><tr><td valign="top"><span class="Fieldlabel"><label for="Job Title">Job Title</label></span></td><td width="80%" align="left"><span class="TEXT" id="Job Title">Senior Maintenance Manager II</span></td></tr><tr><td valign="top"><span class="Fieldlabel"><label for="Job Description">Job Description</label></span></td><td width="80%" align="left"><span class="TEXT" id="Job Description"><font size=2>&nbsp;<font size=2>&nbsp;<font size=2>Skilled in apartment maintenance, but looking for something more? Ready for an upwardly mobile position, but still want hands-on responsibilities? If you’re tired of unsteady work or dead-end jobs - and ready for security, benefits and growth opportunities — we’ve got the job for you!&nbsp;<br><strong><br>Job Description</strong>&nbsp;<br>Our Senior Maintenance Managers are critical members of our team. They’re responsible for keeping our buildings in the top-notch condition our high-end residents have come to expect. Be ready to be busy! This challenging position includes: <br><ul><br><li>Giving residents exceptional service (friendliness and responsiveness are huge!) <br><li>Managing work orders, time and people <br><li>Completing hands-on, technical, maintenance projects <br><li>Building, mentoring and leading a strong team of technicians and grounds personnel <br><li>Coordinating tenant move-ins/move-outs with your front office team <br><li>Managing a budget <br><li>Coordinating vendors and inventory <br><li>Problem solving and trouble shooting </li></ul><strong>Requirements </strong><br><ul><br><li>Warm, friendly, service-oriented personality <br><li>5 or more years of maintenance, construction or related experience — multi-family experience preferred <br><li>5 or more years of experience managing at least two direct reports <br><li>HVAC certification highly recommended: Type II, Type III and/or Universal <br><li>High-energy: this is a busy and hands-on job! <br><li>Self-motivated, hard-working, advancement-oriented <br><li>Ability to work some weekends on a rotating schedule <br><li>Basic computer skills <br><li>Valid driver’s license <br><li>A competitive spirit: we’re the best of the best and want a superior team! </li></ul><strong>Why You’d Want This Job</strong> <br><ul><br><li>Steady, stable, full-time work with a large, national company <br><li>Clear opportunities for advancement with a well-respected company (One of America’s Most Admired Companies — Fortune magazine 2004) <br><li>Great benefits: excellent health care, paid time off, rent discounts and tuition reimbursement <br><li>Great compensation for holidays and overtime <br><li>On-the-job training and certification <br><li>Excellent leadership development and training programs <br><li>High-end environment; tools provided <br><li>A great group of people working in a real team atmosphere <br><li>Opportunities throughout the U.S. </li></ul>To learn more about Archstone, visit our website at <A href="http://www.archstoneapartments.com/" target=_blank>ArchstoneApartments.com</A>.&nbsp;<br><br>Archstone is an Equal Opportunity Employer. As a condition of employment, a satisfactory hair follicle drug test and background check are required. <br><CENTER><strong><br>Make your talents known! Apply today!</strong><br></CENTER><br><CENTER><br><CENTER><font style="FONT-FAMILY: ; FONT-SIZE: 10px">For the fastest response please apply online. We will also accept resumes by fax at: 1.800.414.1706.</font></CENTER></CENTER></font>&nbsp;</font>&nbsp;</font></span></td></tr><tr><td valign="top"><span class="Fieldlabel"><label for="Market">Market</label></span></td><td width="80%" align="left"><span class="TEXT" id="Market">Seattle</span></td></tr><tr><td valign="top"><span class="Fieldlabel"><label for="Location Name">Location Name</label></span></td><td width="80%" align="left"><span class="TEXT" id="Location Name">Archstone Belltown</span></td></tr><tr><td valign="top"><span class="Fieldlabel"><label for="Department">Department</label></span></td><td width="80%" align="left"><span class="TEXT" id="Department">Archstone Belltown</span></td></tr><tr><td valign="top"><span class="Fieldlabel"><label for="Location: City">Location: City</label></span></td><td width="80%" align="left"><span class="TEXT" id="Location: City">Seattle</span></td></tr><tr><td valign="top"><span class="Fieldlabel"><label for="Location: State">Location: State</label></span></td><td width="80%" align="left"><span class="TEXT" id="Location: State">Washington</span></td></tr><tr><td valign="top"><span class="Fieldlabel"><label for="Auto req ID">Auto req ID</label></span></td><td width="80%" align="left"><span class="TEXT" id="Auto req ID">14829BR</span></td></tr></table>
+<table width="92%" border="0" cellPadding="3" cellSpacing="0" align="center">
+	<tr>
+	<td align="center" nowrap>
+	
+			<label for="button1"></label><input type="button" class="REGbutton" value="Apply to Job(s)"  id=button1 name=button1 onClick="javascript:ApplyNow();"> &nbsp;&nbsp;
+			
+			<label for="button2"></label><input type="button" class="REGbutton" value="Send to friend" id=button2 name=button2 onClick="javascript:sendToFriend();"> &nbsp;&nbsp;
+			
+			<label for="button3"></label><input type="button" class="REGbutton" value="Save to cart" id=button3 name=button3 onClick="javascript:saveToJobCart();"> &nbsp;&nbsp;
+			
+				<label for="button4"></label><input type="button" class="REGbutton" value="View similar jobs" id=button4 name=button4 onClick="javascript: frmSearch.JMSimilarJobCriteria.value = frmSearch.JMSimilarJobCriteria2.value; goToSearchPage();"> &nbsp;&nbsp;
+			
+		<!--RDP 294:Start-->
+		
+	</td>
+	</tr>
+</table>
+
+
+
+
+
+</table>
+</form>
+        <br><Div align='center'><img alt="Powered by Kenexa" src=../../images/powered_by.gif border=0></Div>
+
+	</tr>
+
+
+</table>
+
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td align="center" width="100%">
+						<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12492436-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+					</td>
+
+				</tr>
+			</table>
+
+<!--LDP014 SEO-->
+<span id="IndexMonitor"  style="display:none"> Index Monitor </span>
+</body>
+</html>

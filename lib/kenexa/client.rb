@@ -15,8 +15,8 @@ module Kenexa
       @uri = URI.parse(endpoint)
     end
 
-    def jobs
-      page = 1
+    def jobs(options = {})
+      page = options[:page] || 1
       template = ERB.new(File.read(TEMPLATE_PATH + "/request.erb"))
       inputXml = template.result(binding)
       response = Net::HTTP.post_form(@uri, "inputXml" => inputXml)
