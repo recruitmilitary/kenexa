@@ -35,8 +35,8 @@ module Kenexa
 
       envelope.search("//Job").map { |node|
         attributes = {
-          :url          => extract_text(node, "//JobDetailLink"),
-          :last_updated => extract_date(node, "//LastUpdated"),
+          :url          => extract_text(node, ".//JobDetailLink"),
+          :last_updated => extract_date(node, ".//LastUpdated"),
         }
 
         QUESTION_MAP.keys.each do |attribute|
@@ -79,7 +79,7 @@ module Kenexa
 
     def extract_question(node, name)
       if question_id = QUESTION_MAP[name]
-        extract_text(node, "//Question[@Id='#{question_id}']")
+        extract_text(node, ".//Question[@Id='#{question_id}']")
       else
         raise ArgumentError, "missing question mapping for #{name}"
       end
