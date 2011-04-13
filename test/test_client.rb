@@ -27,6 +27,8 @@ class TestIntegration < MiniTest::Unit::TestCase
     assert_equal 'https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?partnerid=25152&siteid=5244&jobid=217790', job.url
     assert_equal 'New York', job.city
     assert_equal 'New York', job.state
+    assert_equal '14879BR',  job.internal_id
+    assert_equal Date.new(2011, 4, 12), job.last_updated
   end
 
 end

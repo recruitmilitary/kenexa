@@ -71,7 +71,8 @@ EOF
 
       envelope.search("//Job").map { |node|
         attributes = {
-          :url => extract_text(node, "//JobDetailLink"),
+          :url          => extract_text(node, "//JobDetailLink"),
+          :last_updated => extract_date(node, "//LastUpdated"),
         }
 
         QUESTION_MAP.keys.each do |attribute|
@@ -83,12 +84,17 @@ EOF
     end
 
     QUESTION_MAP = {
-      :title => 7996,
-      :city  => 15615,
-      :state => 15616,
+      :title        => 7996,
+      :city         => 15615,
+      :state        => 15616,
+      :internal_id  => 7972,
     }.freeze
 
     private
+
+    def extract_date(node, name)
+      Date.parse extract_text(node, name)
+    end
 
     def extract_question(node, name)
       if question_id = QUESTION_MAP[name]
