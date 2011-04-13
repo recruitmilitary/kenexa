@@ -88,16 +88,17 @@ module Kenexa
     end
 
     def each_job
-      page = 0
+      page = 1
       loop {
-        page += 1
         jobs = jobs(:page => page)
-
-        break if jobs.empty?
+        max_pages ||= jobs.max_pages
 
         jobs.each { |job|
           yield job
         }
+
+        page += 1
+        break if page > max_pages
       }
     end
 
