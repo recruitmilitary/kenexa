@@ -69,8 +69,11 @@ EOF
       doc = Nokogiri::XML response.body
       envelope = Nokogiri::XML doc.children.first.text
 
-      envelope.search("//Question[@Id='7996']").map { |node|
-        Job.new(node.text)
+      envelope.search("//Job").map { |node|
+        title = node.at("//Question[@Id='7996']").text
+        url   = node.at("//JobDetailLink").text
+
+        Job.new(title, url)
       }
     end
 
