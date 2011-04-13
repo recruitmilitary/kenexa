@@ -2,6 +2,7 @@ require 'net/http'
 require 'uri'
 require 'open-uri'
 require 'erb'
+require 'date'
 require 'nokogiri'
 
 module Kenexa
