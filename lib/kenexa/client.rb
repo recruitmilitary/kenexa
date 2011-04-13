@@ -22,8 +22,12 @@ module Kenexa
       template = ERB.new(File.read(TEMPLATE_PATH + "/request.erb"))
       inputXml = template.result(binding)
       response = Net::HTTP.post_form(@uri, "inputXml" => inputXml)
-
       doc = Nokogiri::XML response.body
+
+      # i'm not sure what is up with the response that comes back, but
+      # it appears to be an escaped string of XML. We need to get that
+      # string an parse it with Nokogiri to be able to parse the
+      # interesting pieces.
       envelope = Nokogiri::XML doc.children.first.text
 
       JobCollectionProxy.new(envelope)
