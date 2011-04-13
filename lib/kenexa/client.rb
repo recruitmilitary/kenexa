@@ -47,6 +47,20 @@ module Kenexa
       }
     end
 
+    def each_job
+      page = 0
+      loop {
+        page += 1
+        jobs = jobs(:page => page)
+
+        break if jobs.empty?
+
+        jobs.each { |job|
+          yield job
+        }
+      }
+    end
+
     private
 
     def description_from_url(url)

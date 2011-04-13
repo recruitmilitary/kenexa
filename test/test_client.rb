@@ -35,6 +35,10 @@ class TestIntegration < MiniTest::Unit::TestCase
     stub_request(:get, "https://sjobs.brassring.com/1033/ASP/TG/cim_jobdetail.asp?jobid=209902&partnerid=25152&siteid=5244").
       with(:headers => {'Accept'=>'*/*'}).
       to_return(:status => 200, :body => fixture('job_details_page_3.html'), :headers => {})
+
+    stub_request(:post, "http://import.brassring.com/WebRouter/WebRouter.asmx/route").
+      with(:body => fixture('page_4_request.xml')).
+      to_return(:status => 200, :body => fixture('empty_search_results.xml'), :headers => {})
   end
 
   def test_jobs
@@ -65,6 +69,14 @@ class TestIntegration < MiniTest::Unit::TestCase
 
     assert_equal 3, jobs.size
     assert_equal 'Resident Concierge', job.title
+  end
+
+  def test_each_job
+    client = Kenexa::Client.new
+    jobs = []
+    client.each_job { |job| jobs << job }
+
+    assert_equal 103, jobs.size
   end
 
 end
