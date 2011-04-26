@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "kenexa"
   s.version     = Kenexa::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
+  s.authors     = ["Michael Guterl"]
+  s.email       = ["michael@recruitmilitary.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{A simple ruby wrapper for the Kenexa API}
+  s.description = %q{A simple ruby wrapper for the Kenexa API}
 
   s.rubyforge_project = "kenexa"
 
